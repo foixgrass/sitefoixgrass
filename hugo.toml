@@ -1,0 +1,26 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Studio La Remorque'
+theme = "paper"
+
+[params]
+
+[[menu.main]]
+  name = "Présentation"
+  url = "/#presentation"
+  weight = 1
+
+[[menu.main]]
+  name = "Réalisations"
+  url = "/#realisations"
+  weight = 2
+
+[[menu.main]]
+  name = "Tarifs"
+  url = "/#tarifs"
+  weight = 3
+
+[[menu.main]]
+  name = "Contact"
+  url = "/#contact"
+  weight = 4
