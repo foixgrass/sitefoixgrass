@@ -557,6 +557,7 @@
             src="https://www.youtube.com/embed/RXf6kO5jRVU"
             title="Ashlee Watkins & Andrew Small — Sweet Thing"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
             allowfullscreen>
           </iframe>
         </div>
@@ -572,6 +573,7 @@
             src="https://www.youtube.com/embed/PB8N-h8r780"
             title="Ashlee Watkins & Andrew Small — Weary Lonesome Blues"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
             allowfullscreen>
           </iframe>
         </div>
@@ -587,6 +589,7 @@
             src="https://www.youtube.com/embed/I39q_4N6z18"
             title="Ashlee Watkins & Andrew Small — Reuben's Train"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
             allowfullscreen>
           </iframe>
         </div>
@@ -612,32 +615,17 @@
       FoixGrass est une <strong>première édition</strong> portée par une association locale, sans trésorerie de départ. Sono, lumières, hébergement, assurances, signalétique, nourriture, boissons, gobelets… les frais s'accumulent bien avant que la billetterie ne rentre. <strong>Chaque don, même modeste, compte vraiment.</strong>
     </p>
 
-    <!-- Widget don HelloAsso compact -->
+    <!-- Widget don HelloAsso — code officiel HelloAsso (intégration site) -->
     <div style="display: flex; justify-content: center; margin: 8px 0 12px;">
-      <iframe
-        id="haWidgetLight"
-        allowtransparency="true"
-        allow="payment"
-        scrolling="auto"
-        src="https://www.helloasso.com/associations/foixgrass/formulaires/1/widget?view=form"
-        style="width: clamp(300px, 100%, 26rem); height: 650px; min-height: 550px; border: none; display: block;">
-      </iframe>
+      <iframe id="haWidgetLight" allowtransparency="true" allow="payment" scrolling="auto" src="https://www.helloasso.com/associations/foixgrass/formulaires/1/widget?view=form" style="width: clamp(300px, 100%, 26rem); margin: 0 auto; border: none;" onload="window.addEventListener('message', function(e) { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidgetLight');    if (dataHeight > parseFloat(haWidgetElement.height || 0)) { haWidgetElement.height = dataHeight + 'px';}})"></iframe>
     </div>
-    <script>
-    window.addEventListener('message', function(e) {
-      if (e.origin !== 'https://www.helloasso.com') return;
-      try {
-        var d = (typeof e.data === 'string') ? JSON.parse(e.data) : e.data;
-        var h = d && (d.height || d.data && d.data.height);
-        if (h && h > 100) {
-          var el = document.getElementById('haWidgetLight');
-          if (el) el.style.height = h + 'px';
-        }
-      } catch(err) {}
-    });
-    </script>
 
-    <p style="margin-top: 4px; font-size: 0.82rem; opacity: 0.75;">Paiement sécurisé via HelloAsso · 100% de votre don va au festival</p>
+    <!-- Bouton fallback : indispensable pour Samsung Internet (Galaxy S23) qui bloque l'iframe HelloAsso -->
+    <a href="https://www.helloasso.com/associations/foixgrass/formulaires/1" target="_blank" rel="noopener" class="fg-btn fg-btn-yellow" style="margin-top: 12px;">
+      ❤️ Faire un don sur HelloAsso
+    </a>
+
+    <p style="margin-top: 14px; font-size: 0.82rem; opacity: 0.75;">Paiement sécurisé via HelloAsso · 100% de votre don va au festival<br><span style="font-size:0.78rem;">Si le formulaire ne s'affiche pas (Samsung Internet, mode privé…), utilisez le bouton ci-dessus.</span></p>
   </div>
 </section>
 

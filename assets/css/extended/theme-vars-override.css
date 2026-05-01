@@ -1,38 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   FOIXGRASS — CSS overrides pour le thème Paper
-   Efface les styles par défaut du thème qui gêneraient
-   la mise en page custom de la page d'accueil.
+   FOIXGRASS — Ce fichier est volontairement vide.
+   Tous les overrides du thème sont dans assets/custom.css
+   (fusionné par le partial head.html).
 ═══════════════════════════════════════════════════ */
-
-/* ── Reset de la balise main du thème ── */
-main.prose {
-  max-width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* ── Retrait du padding-top dû au header fixe ── */
-body {
-  padding-top: 0 !important;
-  background: #F7E600 !important;
-}
-
-/* ── La page commence juste sous le header ── */
-main {
-  padding-top: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  padding-bottom: 0 !important;
-  min-height: unset !important;
-}
-
-/* ── Supprime le footer par défaut du thème ── */
-footer.footer {
-  display: none !important;
-}
-
-/* ── Barre de scroll personnalisée ── */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #1A1A1A; }
-::-webkit-scrollbar-thumb { background: #F7E600; border-radius: 0; }
-::-webkit-scrollbar-thumb:hover { background: #E82000; }

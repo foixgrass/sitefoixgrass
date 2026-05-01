@@ -38,8 +38,10 @@ jobs:
       - name: Construire le site Hugo
         env:
           HUGO_ENVIRONMENT: production
+        # On garde la baseURL "https://foixgrass.com/" du hugo.toml,
+        # car le domaine custom est configuré dans static/CNAME.
         run: |
-          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --minify
 
       - name: Uploader l'artifact
         uses: actions/upload-pages-artifact@v3
