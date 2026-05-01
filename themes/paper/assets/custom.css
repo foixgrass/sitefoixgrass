@@ -1,0 +1,192 @@
+/* ================================================
+   STUDIO LA REMORQUE — CSS custom
+   ================================================ */
+@reference './app.css';
+
+html { scroll-behavior: smooth !important; }
+
+body { background: linear-gradient(135deg, #b85042, #cfa139); }
+
+h1 { color: #333; }
+
+a {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ════════════════════════════════════════
+   HEADER — commun
+════════════════════════════════════════ */
+header {
+  position: fixed;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 1000;
+  background-color: #b85042;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+}
+
+/* Par défaut : cacher la barre mobile, montrer desktop */
+.mobile-header  { display: none; }
+#burger-menu    { display: none; }
+#burger-overlay { display: none; }
+.nav-wrapper    { display: flex; }
+
+/* ════════════════════════════════════════
+   DESKTOP (>= 769px)
+════════════════════════════════════════ */
+@media (min-width: 769px) {
+
+  .mobile-header  { display: none !important; }
+  #burger-menu    { display: none !important; }
+  #burger-overlay { display: none !important; }
+
+  .nav-wrapper {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+    width: 100%;
+  }
+
+  .desktop-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+  .desktop-brand img {
+    height: 48px; width: 48px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .desktop-brand-text {
+    display: flex; flex-direction: column; line-height: 1.2;
+  }
+  .desktop-brand-name {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.2rem; color: #fff; letter-spacing: 0.05em;
+  }
+  .desktop-brand-sub {
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.7rem; color: rgba(255,255,255,0.82);
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  .desktop-nav { display: flex; gap: 2rem; align-items: center; }
+  .desktop-nav a {
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.95rem; font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline;
+  }
+  .desktop-nav a:hover { color: #ffe8a0; border-bottom-color: #ffe8a0; }
+}
+
+/* ════════════════════════════════════════
+   MOBILE (<= 768px)
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  header { height: 52px; padding: 0; }
+
+  .nav-wrapper { display: none !important; }
+
+  /* ── Barre mobile ── */
+  .mobile-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; height: 52px;
+    padding: 0 1rem;
+  }
+
+  #burger-menu-btn {
+    background: none; border: none; cursor: pointer;
+    padding: 6px;
+    display: flex; flex-direction: column; gap: 5px;
+    z-index: 1100;
+  }
+  .burger-line {
+    display: block; width: 24px; height: 2px;
+    background: #fff; border-radius: 2px;
+    transition: transform 0.32s ease, opacity 0.32s ease;
+  }
+  body.menu-open #burger-menu-btn .burger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  body.menu-open #burger-menu-btn .burger-line:nth-child(2) {
+    opacity: 0; transform: scaleX(0);
+  }
+  body.menu-open #burger-menu-btn .burger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .mobile-brand { display: flex; align-items: center; gap: 8px; }
+  .mobile-brand img {
+    height: 36px; width: 36px;
+    object-fit: contain; border-radius: 3px;
+  }
+  .mobile-brand-text {
+    display: flex; flex-direction: column;
+    line-height: 1.2; text-align: right;
+  }
+  .mobile-brand-name {
+    font-family: 'Abril Fatface', serif;
+    font-size: 0.95rem; color: #fff;
+  }
+  .mobile-brand-sub {
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.63rem; color: rgba(255,255,255,0.82);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* ── Menu déroulant ── */
+  #burger-menu {
+    position: fixed; top: 0; left: 0;
+    height: 100vh;
+    width: 75vw; max-width: 290px;
+    background-color: #b86a2a;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='650' viewBox='0 0 300 650'>  <rect width='300' height='650' fill='#b86a2a'/>  <!-- %E2%95%90%E2%95%90%E2%95%90 BORDURE D%C3%89CORATIVE %E2%95%90%E2%95%90%E2%95%90 -->  <rect x='8' y='8' width='284' height='634' fill='none' stroke='#7a3d10' stroke-width='2.5' rx='2'/>  <rect x='13' y='13' width='274' height='624' fill='none' stroke='#d4924a' stroke-width='1' rx='1' opacity='0.5'/>  <!-- %E2%95%90%E2%95%90%E2%95%90 TIGE GAUCHE %E2%95%90%E2%95%90%E2%95%90 -->  <g fill='none' stroke='#7a3d10' stroke-linecap='round' stroke-linejoin='round'>   <path d='M32 640 C30 560 48 490 35 400 C22 310 50 245 37 155 C27 85 42 38 40 12' stroke-width='2.5'/>   <!-- feuilles gauche, du bas vers le haut -->   <!-- feuille 1 -->   <path d='M34 590 C55 572 82 568 105 555' stroke-width='1.8'/>   <path d='M105 555 C118 549 124 539 118 532 C112 525 95 528 82 536 C68 544 57 556 62 564 C67 572 88 572 105 555Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 2 -->   <path d='M33 520 C14 502 -2 490 -15 472' stroke-width='1.8'/>   <path d='M-15 472 C-22 462 -18 450 -8 448 C2 446 15 455 22 466 C30 478 28 492 18 496 C8 500 -5 485 -15 472Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 3 (grande) -->   <path d='M36 450 C60 432 90 426 118 413' stroke-width='1.8'/>   <path d='M118 413 C133 406 140 394 133 385 C126 376 106 379 90 389 C73 399 60 414 65 423 C70 433 95 430 118 413Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 4 -->   <path d='M34 375 C15 356 -1 343 -16 326' stroke-width='1.8'/>   <path d='M-16 326 C-24 315 -20 302 -9 300 C2 298 16 308 23 321 C31 334 28 349 17 353 C6 357 -5 340 -16 326Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 5 -->   <path d='M36 300 C58 284 86 277 112 264' stroke-width='1.8'/>   <path d='M112 264 C126 257 132 245 125 237 C118 229 100 232 85 242 C69 252 58 267 63 276 C68 285 91 281 112 264Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 6 -->   <path d='M35 225 C16 208 1 196 -13 180' stroke-width='1.8'/>   <path d='M-13 180 C-20 170 -16 158 -6 157 C4 156 17 166 23 178 C30 190 27 204 17 207 C7 210 -3 194 -13 180Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 7 (haute) -->   <path d='M37 155 C57 140 82 133 105 121' stroke-width='1.8'/>   <path d='M105 121 C118 114 123 103 116 96 C109 89 93 93 79 102 C64 112 55 126 60 134 C65 142 86 138 105 121Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 8 (tr%C3%A8s haute) -->   <path d='M38 88 C20 74 6 64 -8 50' stroke-width='1.8'/>   <path d='M-8 50 C-14 41 -10 31 -1 30 C8 29 20 38 25 50 C31 61 27 74 18 77 C9 80 0 63 -8 50Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>  </g>  <!-- %E2%95%90%E2%95%90%E2%95%90 FLEUR HAUT GAUCHE %E2%95%90%E2%95%90%E2%95%90 -->  <g stroke='#7a3d10' stroke-width='1.5' fill='none'>   <circle cx='40' cy='16' r='7' fill='#d4924a' opacity='0.7'/>   <circle cx='40' cy='16' r='3' fill='#7a3d10' opacity='0.8'/>   <!-- p%C3%A9tales -->   <ellipse cx='40' cy='7' rx='3.5' ry='5.5' fill='#d4924a' opacity='0.65'/>   <ellipse cx='40' cy='25' rx='3.5' ry='5.5' fill='#d4924a' opacity='0.65'/>   <ellipse cx='31' cy='16' rx='5.5' ry='3.5' fill='#d4924a' opacity='0.65'/>   <ellipse cx='49' cy='16' rx='5.5' ry='3.5' fill='#d4924a' opacity='0.65'/>   <ellipse cx='34' cy='10' rx='3.5' ry='5.5' transform='rotate(-45 34 10)' fill='#d4924a' opacity='0.55'/>   <ellipse cx='46' cy='10' rx='3.5' ry='5.5' transform='rotate(45 46 10)' fill='#d4924a' opacity='0.55'/>   <ellipse cx='34' cy='22' rx='3.5' ry='5.5' transform='rotate(45 34 22)' fill='#d4924a' opacity='0.55'/>   <ellipse cx='46' cy='22' rx='3.5' ry='5.5' transform='rotate(-45 46 22)' fill='#d4924a' opacity='0.55'/>  </g>  <!-- %E2%95%90%E2%95%90%E2%95%90 TIGE DROITE %E2%95%90%E2%95%90%E2%95%90 -->  <g fill='none' stroke='#7a3d10' stroke-linecap='round' stroke-linejoin='round'>   <path d='M268 640 C270 560 252 490 265 400 C278 310 250 245 263 155 C273 85 258 38 260 12' stroke-width='2.5'/>   <!-- feuilles droite -->   <!-- feuille 1 -->   <path d='M266 590 C245 572 218 568 195 555' stroke-width='1.8'/>   <path d='M195 555 C182 549 176 539 182 532 C188 525 205 528 218 536 C232 544 243 556 238 564 C233 572 212 572 195 555Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 2 -->   <path d='M267 520 C286 502 302 490 315 472' stroke-width='1.8'/>   <path d='M315 472 C322 462 318 450 308 448 C298 446 285 455 278 466 C270 478 272 492 282 496 C292 500 305 485 315 472Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 3 -->   <path d='M264 450 C240 432 210 426 182 413' stroke-width='1.8'/>   <path d='M182 413 C167 406 160 394 167 385 C174 376 194 379 210 389 C227 399 240 414 235 423 C230 433 205 430 182 413Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 4 -->   <path d='M266 375 C285 356 301 343 316 326' stroke-width='1.8'/>   <path d='M316 326 C324 315 320 302 309 300 C298 298 284 308 277 321 C269 334 272 349 283 353 C294 357 305 340 316 326Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 5 -->   <path d='M264 300 C242 284 214 277 188 264' stroke-width='1.8'/>   <path d='M188 264 C174 257 168 245 175 237 C182 229 200 232 215 242 C231 252 242 267 237 276 C232 285 209 281 188 264Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 6 -->   <path d='M265 225 C284 208 299 196 313 180' stroke-width='1.8'/>   <path d='M313 180 C320 170 316 158 306 157 C296 156 283 166 277 178 C270 190 273 204 283 207 C293 210 303 194 313 180Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 7 -->   <path d='M263 155 C243 140 218 133 195 121' stroke-width='1.8'/>   <path d='M195 121 C182 114 177 103 184 96 C191 89 207 93 221 102 C236 112 245 126 240 134 C235 142 214 138 195 121Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>   <!-- feuille 8 -->   <path d='M262 88 C280 74 294 64 308 50' stroke-width='1.8'/>   <path d='M308 50 C314 41 310 31 301 30 C292 29 280 38 275 50 C269 61 273 74 282 77 C291 80 300 63 308 50Z' stroke-width='1.5' fill='#9a5520' opacity='0.6'/>  </g>  <!-- %E2%95%90%E2%95%90%E2%95%90 FLEUR HAUT DROITE %E2%95%90%E2%95%90%E2%95%90 -->  <g stroke='#7a3d10' stroke-width='1.5' fill='none'>   <circle cx='260' cy='16' r='7' fill='#d4924a' opacity='0.7'/>   <circle cx='260' cy='16' r='3' fill='#7a3d10' opacity='0.8'/>   <ellipse cx='260' cy='7' rx='3.5' ry='5.5' fill='#d4924a' opacity='0.65'/>   <ellipse cx='260' cy='25' rx='3.5' ry='5.5' fill='#d4924a' opacity='0.65'/>   <ellipse cx='251' cy='16' rx='5.5' ry='3.5' fill='#d4924a' opacity='0.65'/>   <ellipse cx='269' cy='16' rx='5.5' ry='3.5' fill='#d4924a' opacity='0.65'/>   <ellipse cx='254' cy='10' rx='3.5' ry='5.5' transform='rotate(-45 254 10)' fill='#d4924a' opacity='0.55'/>   <ellipse cx='266' cy='10' rx='3.5' ry='5.5' transform='rotate(45 266 10)' fill='#d4924a' opacity='0.55'/>   <ellipse cx='254' cy='22' rx='3.5' ry='5.5' transform='rotate(45 254 22)' fill='#d4924a' opacity='0.55'/>   <ellipse cx='266' cy='22' rx='3.5' ry='5.5' transform='rotate(-45 266 22)' fill='#d4924a' opacity='0.55'/>  </g>  <!-- %E2%95%90%E2%95%90%E2%95%90 PETITES FLEURS D%C3%89CORATIVES milieu bas %E2%95%90%E2%95%90%E2%95%90 -->  <g stroke='#7a3d10' stroke-width='1.2' fill='none'>   <!-- fleurette centre haut -->   <circle cx='150' cy='25' r='4' fill='#d4924a' opacity='0.55'/>   <circle cx='150' cy='25' r='2' fill='#7a3d10' opacity='0.7'/>   <ellipse cx='150' cy='19' rx='2.5' ry='4' fill='#d4924a' opacity='0.5'/>   <ellipse cx='150' cy='31' rx='2.5' ry='4' fill='#d4924a' opacity='0.5'/>   <ellipse cx='144' cy='25' rx='4' ry='2.5' fill='#d4924a' opacity='0.5'/>   <ellipse cx='156' cy='25' rx='4' ry='2.5' fill='#d4924a' opacity='0.5'/>   <!-- fleurette centre bas -->   <circle cx='150' cy='625' r='4' fill='#d4924a' opacity='0.55'/>   <circle cx='150' cy='625' r='2' fill='#7a3d10' opacity='0.7'/>   <ellipse cx='150' cy='619' rx='2.5' ry='4' fill='#d4924a' opacity='0.5'/>   <ellipse cx='150' cy='631' rx='2.5' ry='4' fill='#d4924a' opacity='0.5'/>   <ellipse cx='144' cy='625' rx='4' ry='2.5' fill='#d4924a' opacity='0.5'/>   <ellipse cx='156' cy='625' rx='4' ry='2.5' fill='#d4924a' opacity='0.5'/>   <!-- petits points d'ornement -->   <circle cx='150' cy='45' r='2' fill='#d4924a' opacity='0.5'/>   <circle cx='140' cy='55' r='1.5' fill='#d4924a' opacity='0.45'/>   <circle cx='160' cy='55' r='1.5' fill='#d4924a' opacity='0.45'/>   <circle cx='150' cy='605' r='2' fill='#d4924a' opacity='0.5'/>   <circle cx='140' cy='595' r='1.5' fill='#d4924a' opacity='0.45'/>   <circle cx='160' cy='595' r='1.5' fill='#d4924a' opacity='0.45'/>  </g> </svg>");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1050;
+    padding: 5.5rem 2rem 2rem;
+    display: flex !important; flex-direction: column; gap: 0;
+    transform: translateX(-100%);
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+  }
+  #burger-menu.show { transform: translateX(0); }
+
+  #burger-menu .menu-link {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.25rem; color: #fff;
+    text-decoration: none;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.22);
+    letter-spacing: 0.04em;
+    transition: color 0.2s, padding-left 0.25s;
+    display: block;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+  }
+  #burger-menu .menu-link:last-child { border-bottom: none; }
+  #burger-menu .menu-link:hover { color: #fff3cc; padding-left: 0.6rem; }
+
+  /* ── Overlay ── */
+  #burger-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(40,20,5,0.45);
+    z-index: 1040;
+    backdrop-filter: blur(2px);
+  }
+  #burger-overlay.show { display: block; }
+}
