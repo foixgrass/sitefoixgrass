@@ -1,0 +1,47 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- FoixGrass — Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- title -->
+  <title>
+    {{- if not .IsHome -}}{{- .Title -}} - {{- end -}}{{- site.Title -}}
+  </title>
+
+  <!-- meta -->
+  <meta name="theme-color" content="#F7E600" />
+
+  <!-- author -->
+  {{- $site_author := or site.Author.name site.Params.name site.Title -}}
+  {{- if eq .Kind "page" -}}
+  <meta name="description" content="{{- .Summary -}}" />
+  <meta name="author" content="{{- or .Params.author $site_author -}}" />
+  {{- else -}}
+  <meta name="description" content="{{- site.Params.description | default `Festival de Bluegrass en Ariège` -}}" />
+  <meta name="author" content="{{- $site_author -}}" />
+  {{- end -}}
+
+  <!-- css & js -->
+  {{- $main := resources.Get "main.css" -}}
+  {{- $custom := resources.Get "custom.css" -}}
+  {{- $css := slice $main $custom | resources.Concat "main.css" | minify -}}
+  <link rel="preload stylesheet" as="style" href="{{- $css.Permalink -}}" />
+
+  <!-- favicon -->
+  <link rel="icon" href="{{- site.Params.favicon | default `favicon.ico` | absURL -}}" />
+  <link rel="apple-touch-icon" href="{{- site.Params.appleTouchIcon | default `apple-touch-icon.png` | absURL -}}" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FoixGrass Festival — Bluegrass en Ariège" />
+  <meta property="og:description" content="Festival de Bluegrass · 20–23 Août 2026 · Ganac, Ariège (09)" />
+  <meta property="og:image" content="{{- `img/logo-foixgrass.jpeg` | absURL -}}" />
+  <meta property="og:type" content="website" />
+
+  <!-- generator -->
+  {{- hugo.Generator -}}
+</head>

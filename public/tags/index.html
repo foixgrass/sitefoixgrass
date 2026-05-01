@@ -9,135 +9,287 @@
 <html
   class="not-ready lg:text-base"
   style="--bg:#faf8f1"
-  lang="en-us"
+  lang="fr"
   dir="ltr"
-><head>
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-  <link rel="stylesheet" href="https://example.org/assets/css/custom.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   
-  <title>Tags-Studio La Remorque</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
   
-  <meta name="theme-color" />
+  <title>Tags-FoixGrass Festival</title>
 
   
-  <meta
-    name="description"
-    content="A personal blog"
-  />
-  <meta name="author" content="Studio La Remorque" /><link rel="preload stylesheet" as="style" href="https://example.org/main.min.css" />
+  <meta name="theme-color" content="#F7E600" />
+
+  <meta name="description" content="Festival de Bluegrass en Ariège — 20 au 23 Août 2026 — Ganac (09)" />
+  <meta name="author" content="FoixGrass Festival" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
-  <link rel="preload" as="image" href="https://example.org/theme.png" />
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
 
   
+  <meta property="og:title" content="FoixGrass Festival — Bluegrass en Ariège" />
+  <meta property="og:description" content="Festival de Bluegrass · 20–23 Août 2026 · Ganac, Ariège (09)" />
+  <meta property="og:image" content="http://localhost:1313/img/logo-foixgrass.jpeg" />
+  <meta property="og:type" content="website" />
 
-  
-
-  
-
-  
-  <link
-    rel="icon"
-    href="https://example.org/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://example.org/apple-touch-icon.png"
-  />
-
-  <meta name="generator" content="Hugo 0.145.0">
-  <meta itemprop="name" content="Tags"><meta property="og:url" content="https://example.org/tags/">
-  <meta property="og:site_name" content="Studio La Remorque">
-  <meta property="og:title" content="Tags">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tags">
-<link
-    rel="alternate"
-    type="application/rss&#43;xml"
-    href="https://example.org/tags/index.xml"
-    title="Studio La Remorque"
-  />
-  <link rel="canonical" href="https://example.org/tags/" />
-</head>
+  <meta name="generator" content="Hugo 0.145.0"></head>
 <body
     class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header class="mx-auto flex flex-col max-w-(--w) px-8 whitespace-nowrap lg:justify-center">
+  ><style>
+ 
+* { box-sizing: border-box; }
+
+#site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  width: 100%;
+  z-index: 9000;
+  background: #F7E600;
+  border-bottom: 3px solid #1A1A1A;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.22);
+}
+
+ 
+#header-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+}
+#header-desktop .hd-brand {
+  display: flex; align-items: center; gap: 0.7rem; text-decoration: none;
+}
+#header-desktop .hd-brand img {
+  height: 50px; width: auto; object-fit: contain; flex-shrink: 0;
+}
+#header-desktop .hd-brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+#header-desktop .hd-brand-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem;
+  color: #1A1A1A;
+  letter-spacing: 0.06em;
+}
+#header-desktop .hd-brand-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+#header-desktop nav { display: flex; gap: 1.5rem; align-items: center; }
+#header-desktop nav a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: #1A1A1A;
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.18s, border-color 0.18s;
+}
+#header-desktop nav a:hover { color: #E82000; border-bottom-color: #E82000; }
+
+ 
+#header-desktop nav .nav-cta {
+  background: #E82000;
+  color: #fff !important;
+  border: 2px solid #1A1A1A !important;
+  padding: 6px 18px !important;
+  border-bottom: 2px solid #1A1A1A !important;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  transition: background 0.18s, color 0.18s;
+}
+#header-desktop nav .nav-cta:hover {
+  background: #1A1A1A;
+  color: #F7E600 !important;
+}
+
+ 
+#header-mobile {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 0 1rem;
+}
+#hm-burger-btn {
+  background: none; border: none; cursor: pointer;
+  padding: 6px; display: flex; flex-direction: column; gap: 5px; flex-shrink: 0;
+}
+.hm-line {
+  display: block; width: 24px; height: 2.5px;
+  background: #1A1A1A; border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+body.nav-open .hm-line:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+body.nav-open .hm-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+#header-mobile .hm-brand {
+  display: flex; align-items: center; gap: 8px;
+}
+#header-mobile .hm-brand img {
+  height: 38px; width: auto; object-fit: contain;
+}
+#header-mobile .hm-brand-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  color: #1A1A1A;
+  letter-spacing: 0.06em;
+}
+
+ 
+#hm-nav {
+  position: fixed; top: 0; left: 0;
+  height: 100vh; width: 72vw; max-width: 300px;
+  background: #1A1A1A;
+  z-index: 9100;
+  padding: 4.5rem 1.8rem 2rem;
+  display: flex; flex-direction: column; gap: 0;
+  transform: translateX(-100%);
+  transition: transform 0.36s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+}
+#hm-close-btn {
+  position: absolute; top: 0.8rem; right: 0.9rem;
+  background: none; border: none; cursor: pointer;
+  color: #F7E600; font-size: 1.8rem; line-height: 1;
+  padding: 4px 8px;
+  transition: color 0.2s, transform 0.2s;
+}
+#hm-close-btn:hover { color: #E82000; transform: scale(1.15); }
+#hm-nav.open { transform: translateX(0); }
+#hm-nav a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  color: #F7E600;
+  text-decoration: none;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(247,230,0,0.2);
+  display: block;
+  transition: color 0.2s, padding-left 0.22s;
+}
+#hm-nav a:last-child { border-bottom: none; }
+#hm-nav a:hover { color: #E82000; padding-left: 0.5rem; }
+#hm-nav .nav-cta-mobile {
+  margin-top: 1rem;
+  background: #E82000;
+  color: #fff !important;
+  text-align: center;
+  padding: 0.7rem 1rem !important;
+  border-bottom: none !important;
+}
+#hm-nav .nav-cta-mobile:hover { background: #F7E600; color: #1A1A1A !important; }
+
+ 
+#hm-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.55); z-index: 9050;
+}
+#hm-overlay.open { display: block; }
+
+ 
+@media (min-width: 769px) {
+  #header-desktop { display: flex; }
+  #header-mobile  { display: none; }
+  #site-header { height: 64px; }
+}
+@media (max-width: 768px) {
+  #header-desktop { display: none; }
+  #header-mobile  { display: flex; }
+  #site-header { height: 54px; }
+  #hm-nav { display: flex; }
+}
+</style>
+
+<div id="site-header">
   
-  <div class="flex items-center justify-between w-full h-[3rem]"> 
-    <a class="-translate-y-[1px] text-xl font-medium flex items-center" href="https://example.org/"> 
-      <img src="https://example.org/img/logo.png" alt="Logo" class="h-3 mr-0" /> 
-      Studio La Remorque
+  <div id="header-desktop">
+    <a href="http://localhost:1313/" class="hd-brand">
+      <img src="http://localhost:1313/img/logo-foixgrass.jpeg" alt="Logo FoixGrass Festival">
+      <div class="hd-brand-text">
+        <span class="hd-brand-name">FoixGrass</span>
+        <span class="hd-brand-sub">Festival · Ariège · 20–23 Août 2026</span>
+      </div>
     </a>
-    
-    
-    <div
-      class="btn-dark text-[0px] h-5 w-5 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
+    <nav>
+      <a href="#festival">Le Festival</a>
+      <a href="#artistes">Artistes</a>
+      <a href="#infos">Infos Pratiques</a>
+      <a href="#don">Faire un Don</a>
+      <a href="#billetterie" class="nav-cta">🎟 Billetterie</a>
+    </nav>
   </div>
 
   
-  <div class="nav-wrapper fixed inset-x-0 top-[3rem] z-40 flex h-full flex-col justify-center bg-(--bg) pb-8 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"> <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-8 rtl:space-x-reverse"> <a class="block text-center text-lg leading-[3rem] lg:text-base lg:font-normal" href="/#presentation">Présentation</a><a class="block text-center text-lg leading-[3rem] lg:text-base lg:font-normal" href="/#realisations">Réalisations</a><a class="block text-center text-lg leading-[3rem] lg:text-base lg:font-normal" href="/#tarifs">Tarifs</a><a class="block text-center text-lg leading-[3rem] lg:text-base lg:font-normal" href="/#contact">Contact</a></nav></div>
+  <div id="header-mobile">
+    <button id="hm-burger-btn" aria-label="Ouvrir le menu">
+      <span class="hm-line"></span>
+      <span class="hm-line"></span>
+      <span class="hm-line"></span>
+    </button>
+    <div class="hm-brand">
+      <img src="http://localhost:1313/img/logo-foixgrass.jpeg" alt="FoixGrass">
+      <span class="hm-brand-name">FoixGrass</span>
+    </div>
+  </div>
+</div>
 
-  
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
+<nav id="hm-nav" aria-hidden="true">
+  <button id="hm-close-btn" aria-label="Fermer le menu">&#x2715;</button>
+  <a href="#festival">Le Festival</a>
+  <a href="#artistes">Artistes</a>
+  <a href="#infos">Infos Pratiques</a>
+  <a href="#don">Faire un Don</a>
+  <a href="#billetterie" class="nav-cta-mobile">🎟 Billetterie</a>
+</nav>
+<div id="hm-overlay"></div>
 
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#ffffff'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-</header>
+<script>
+(function () {
+  var btn      = document.getElementById('hm-burger-btn');
+  var closeBtn = document.getElementById('hm-close-btn');
+  var nav      = document.getElementById('hm-nav');
+  var overlay  = document.getElementById('hm-overlay');
+  var links    = nav.querySelectorAll('a');
+  function open() {
+    nav.classList.add('open'); overlay.classList.add('open');
+    document.body.classList.add('nav-open');
+    nav.setAttribute('aria-hidden', 'false');
+  }
+  function close() {
+    nav.classList.remove('open'); overlay.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    nav.setAttribute('aria-hidden', 'true');
+  }
+  if (btn) btn.addEventListener('click', function () { nav.classList.contains('open') ? close() : open(); });
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', close);
+  links.forEach(function (l) { l.addEventListener('click', close); });
+})();
+</script>
 <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     ><h1 class="mb-14">#Tags</h1></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
-  <div class="mr-auto">&copy;2025&nbsp;
-    <a class="link" href="https://example.org/">Studio La Remorque</a></div>
+  <div class="mr-auto">&copy;2026&nbsp;
+    <a class="link" href="http://localhost:1313/">FoixGrass Festival</a></div>
    
 </footer>
 </body>

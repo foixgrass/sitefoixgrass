@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="800" viewBox="0 0 280 800">
+  <defs>
+    <filter id="paper" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feBlend in="SourceGraphic" in2="gray" mode="multiply" result="blend"/>
+      <feComponentTransfer in="blend">
+        <feFuncA type="linear" slope="1"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- Fond papier chaud -->
+  <rect width="280" height="800" fill="#c8643a"/>
+  <!-- Légère texture -->
+  <rect width="280" height="800" fill="#b85042" opacity="0.55"/>
+
+  <!-- ── Branche basse gauche ── -->
+  <g stroke="#7a2e1a" stroke-width="1.2" fill="none" opacity="0.55">
+    <path d="M-10,750 Q40,700 80,680 Q120,660 150,620"/>
+    <path d="M40,710 Q30,690 20,670"/>
+    <path d="M70,695 Q55,678 48,655"/>
+    <path d="M100,672 Q88,652 85,630"/>
+    <path d="M130,645 Q120,625 118,600"/>
+  </g>
+  <!-- Feuilles basse gauche -->
+  <g fill="#7a2e1a" opacity="0.45">
+    <ellipse cx="18" cy="666" rx="9" ry="5" transform="rotate(-40,18,666)"/>
+    <ellipse cx="45" cy="651" rx="10" ry="5" transform="rotate(-55,45,651)"/>
+    <ellipse cx="82" cy="626" rx="11" ry="5" transform="rotate(-30,82,626)"/>
+    <ellipse cx="115" cy="597" rx="9" ry="4" transform="rotate(-45,115,597)"/>
+  </g>
+
+  <!-- ── Branche haute droite ── -->
+  <g stroke="#7a2e1a" stroke-width="1.2" fill="none" opacity="0.55">
+    <path d="M290,50 Q240,90 200,120 Q160,150 140,190"/>
+    <path d="M240,80 Q255,62 265,42"/>
+    <path d="M210,105 Q228,88 238,68"/>
+    <path d="M178,132 Q198,116 210,96"/>
+    <path d="M152,165 Q172,148 182,128"/>
+  </g>
+  <g fill="#7a2e1a" opacity="0.45">
+    <ellipse cx="267" cy="43" rx="9" ry="5" transform="rotate(50,267,43)"/>
+    <ellipse cx="240" cy="68" rx="10" ry="5" transform="rotate(40,240,68)"/>
+    <ellipse cx="212" cy="96" rx="11" ry="5" transform="rotate(35,212,96)"/>
+    <ellipse cx="184" cy="128" rx="9" ry="4" transform="rotate(50,184,128)"/>
+  </g>
+
+  <!-- ── Petite fleur centre gauche ── -->
+  <g transform="translate(42,340)" opacity="0.5">
+    <circle cx="0" cy="0" r="5" fill="#7a2e1a"/>
+    <ellipse cx="0" cy="-12" rx="5" ry="8" fill="#9a4030" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-12" rx="5" ry="8" fill="#9a4030" transform="rotate(45)"/>
+    <ellipse cx="0" cy="-12" rx="5" ry="8" fill="#9a4030" transform="rotate(90)"/>
+    <ellipse cx="0" cy="-12" rx="5" ry="8" fill="#9a4030" transform="rotate(135)"/>
+    <ellipse cx="0" cy="-12" rx="5" ry="8" fill="#9a4030" transform="rotate(180)"/>
+    <ellipse cx="0" cy="-12" rx="5" ry="8" fill="#9a4030" transform="rotate(225)"/>
+    <ellipse cx="0" cy="-12" rx="5" ry="8" fill="#9a4030" transform="rotate(270)"/>
+    <ellipse cx="0" cy="-12" rx="5" ry="8" fill="#9a4030" transform="rotate(315)"/>
+    <circle cx="0" cy="0" r="4" fill="#d4844a"/>
+  </g>
+
+  <!-- ── Petite fleur centre droite ── -->
+  <g transform="translate(238,480)" opacity="0.5">
+    <circle cx="0" cy="0" r="4" fill="#7a2e1a"/>
+    <ellipse cx="0" cy="-10" rx="4" ry="7" fill="#9a4030" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-10" rx="4" ry="7" fill="#9a4030" transform="rotate(60)"/>
+    <ellipse cx="0" cy="-10" rx="4" ry="7" fill="#9a4030" transform="rotate(120)"/>
+    <ellipse cx="0" cy="-10" rx="4" ry="7" fill="#9a4030" transform="rotate(180)"/>
+    <ellipse cx="0" cy="-10" rx="4" ry="7" fill="#9a4030" transform="rotate(240)"/>
+    <ellipse cx="0" cy="-10" rx="4" ry="7" fill="#9a4030" transform="rotate(300)"/>
+    <circle cx="0" cy="0" r="3" fill="#d4844a"/>
+  </g>
+
+  <!-- ── Petits points décoratifs (style gravure) ── -->
+  <g fill="#7a2e1a" opacity="0.3">
+    <circle cx="15" cy="400" r="1.5"/>
+    <circle cx="25" cy="415" r="1"/>
+    <circle cx="10" cy="430" r="1.5"/>
+    <circle cx="260" cy="300" r="1.5"/>
+    <circle cx="270" cy="315" r="1"/>
+    <circle cx="255" cy="330" r="1.5"/>
+    <circle cx="140" cy="20"  r="1.5"/>
+    <circle cx="150" cy="35"  r="1"/>
+    <circle cx="135" cy="780" r="1.5"/>
+    <circle cx="145" cy="765" r="1"/>
+  </g>
+
+  <!-- ── Ligne de séparation fine en haut ── -->
+  <line x1="20" y1="72" x2="260" y2="72" stroke="#7a2e1a" stroke-width="0.8" opacity="0.5" stroke-dasharray="4,3"/>
+
+</svg>
