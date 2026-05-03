@@ -338,10 +338,16 @@
 .modal-video-responsive {
   position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
 }
-.modal-video-responsive iframe,
-.modal-video-responsive video {
+.modal-video-responsive iframe {
   position: absolute; top: 0; left: 0;
   width: 100%; height: 100%; border: none;
+}
+/* Vidéo locale : pas de trick aspect-ratio, laisse le navigateur gérer la hauteur */
+.modal-video-native {
+  width: 100%; display: block; background: #000;
+}
+.modal-video-native video {
+  width: 100%; height: auto; display: block; border: none;
 }
 .modal-video-footer {
   display: flex; align-items: center;
@@ -655,6 +661,15 @@
             <span class="modal-video-tag">La Famille Ginger</span>
           </div>
         </div>
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/hADtl8bTH8w" title="La Famille Ginger" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">La Famille Ginger</span>
+            <span class="modal-video-tag">La Famille Ginger</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -677,7 +692,7 @@
       <p class="modal-videos-label">Écoutez-les</p>
       <div class="modal-videos-stack">
         <div class="modal-video-item">
-          <div class="modal-video-responsive">
+          <div class="modal-video-native">
             <video controls preload="metadata">
               <source src="video/powell-landry-lind.mp4" type="video/mp4">
             </video>
