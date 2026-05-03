@@ -162,177 +162,204 @@
 }
 
 /* ═══════════════════════════════════
-   SECTION 2 — ARTISTES
+   SECTION 2 — ARTISTES (grille + modals)
 ═══════════════════════════════════ */
 #artistes {
   background: #1A1A1A;
   color: #fff;
-  padding-bottom: 80px;
+  padding: 60px 0 80px;
   border-bottom: 4px solid #F7E600;
 }
-
-/* Label "Premier artiste" centré au-dessus */
-.artistes-eyebrow {
+.artistes-header {
   text-align: center;
-  padding: 60px 24px 0;
+  padding: 0 24px 48px;
 }
-.artistes-eyebrow .fg-section-sub { color: rgba(247,230,0,0.55); }
-
-/* ── Affiche centrée, image complète ── */
-.artiste-poster-wrap {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 24px;
-}
-.artiste-poster {
-  width: 100%;
-  max-width: 560px;
-  border: 3px solid #F7E600;
-  line-height: 0;
-  overflow: hidden;
-  font-size: 0;
-}
-.artiste-poster img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 !important;
-  padding: 0 !important;
-  vertical-align: top;
-}
-/* Infos sous l'affiche, hors cadre */
-.artiste-poster-caption {
-  width: 100%;
-  max-width: 560px;
-  margin-top: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.artiste-poster-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2.4rem);
-  letter-spacing: 0.06em;
-  color: #F7E600;
-  line-height: 1;
-  margin: 0;
-}
-.artiste-poster-meta {
-  text-align: right;
-}
-.artiste-poster-genre {
-  display: block;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(0.75rem, 1.6vw, 1rem);
-  letter-spacing: 0.18em;
-  color: #E82000;
-  text-transform: uppercase;
-}
-.artiste-poster-origin {
-  display: inline-block;
-  margin-top: 4px;
-  background: #1E3FA8;
-  color: #fff;
-  font-family: 'Bebas Neue', sans-serif;
+.artistes-header .fg-section-title { color: #F7E600; }
+.artistes-header .fg-section-sub   { color: rgba(247,230,0,0.55); margin-bottom: 8px; }
+.artistes-hint {
+  font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
-  letter-spacing: 0.14em;
-  padding: 2px 10px;
-  border: 2px solid rgba(247,230,0,0.4);
-}
-
-/* ── Bio discrète ── */
-.artiste-bio-strip {
-  max-width: 780px;
-  margin: 32px auto 0;
-  padding: 0 32px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.5);
-  text-align: center;
-}
-
-/* ── Vidéos grandes et centrées ── */
-.videos-section {
-  margin-top: 52px;
-  padding: 0 24px;
-}
-.videos-label {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  letter-spacing: 0.18em;
-  color: #F7E600;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0 0 28px;
-}
-.videos-label::before, .videos-label::after {
-  content: ' — ';
-  color: #E82000;
-  letter-spacing: 0;
-}
-
-.videos-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.video-item {
-  background: #0d0d0d;
-  border: 2px solid rgba(247,230,0,0.2);
-  transition: border-color 0.2s, transform 0.15s;
-}
-.video-item:hover {
-  border-color: #F7E600;
-  transform: translateY(-3px);
-}
-.video-responsive {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-.video-responsive iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  border: none;
-}
-.video-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  border-top: 1px solid rgba(247,230,0,0.12);
-}
-.video-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.1em;
-  color: #F7E600;
-  text-transform: uppercase;
-}
-.video-artist-tag {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: rgba(255,255,255,0.35);
   text-transform: uppercase;
+  margin: 0;
 }
 
-/* Responsive mobile */
-@media (max-width: 640px) {
-  .artiste-poster-caption { padding: 20px 18px; }
-  .artiste-poster-meta { text-align: left; }
-  .videos-section { padding: 0 12px; }
+/* ── Grille d'affiches ── */
+.artistes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.artiste-card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: #0d0d0d;
+  border: 2px solid rgba(247,230,0,0.15);
+  transition: border-color 0.2s;
+}
+.artiste-card:hover { border-color: #F7E600; }
+.artiste-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  line-height: 0;
+}
+.artiste-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  margin: 0 !important;
+  transition: transform 0.4s ease;
+}
+.artiste-card:hover .artiste-card-img img { transform: scale(1.04); }
+.artiste-card-overlay {
+  position: absolute; inset: 0;
+  background: rgba(26,26,26,0.72);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.25s;
+}
+.artiste-card:hover .artiste-card-overlay { opacity: 1; }
+.artiste-card-overlay span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  color: #F7E600;
+  border: 2px solid #F7E600;
+  padding: 12px 22px;
+  line-height: 1;
+}
+.artiste-card-name {
+  padding: 14px 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+  letter-spacing: 0.06em;
+  color: #F7E600;
+  line-height: 1.2;
+  text-align: center;
+  border-top: 1px solid rgba(247,230,0,0.2);
+}
+@media (max-width: 768px) {
+  .artistes-grid { grid-template-columns: repeat(2, 1fr); padding: 0 12px; }
+}
+@media (max-width: 420px) {
+  .artistes-grid { grid-template-columns: 1fr; max-width: 320px; }
+}
+
+/* ── Modals artistes ── */
+.artiste-modal {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 9500;
+  background: rgba(0,0,0,0.9);
+  overflow-y: auto;
+  padding: 20px 12px 40px;
+}
+.artiste-modal.open { display: block; }
+.modal-inner {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  background: #111;
+  border: 2px solid #F7E600;
+}
+.modal-close {
+  position: sticky;
+  top: 8px; float: right;
+  margin: 10px 10px 0 0;
+  background: #E82000; color: #fff;
+  border: none; cursor: pointer;
+  font-size: 1.3rem;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10; transition: background 0.2s;
+}
+.modal-close:hover { background: #1A1A1A; }
+.modal-poster { line-height: 0; overflow: hidden; }
+.modal-poster img {
+  width: 100%; height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+  object-position: top;
+  display: block; margin: 0 !important;
+}
+.modal-poster.is-photo img {
+  object-fit: cover;
+  object-position: center;
+  max-height: 48vh;
+}
+.modal-info { padding: 24px 28px 36px; }
+.modal-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 2.6rem);
+  letter-spacing: 0.06em;
+  color: #F7E600; line-height: 1.1;
+  margin: 0 0 10px;
+}
+.modal-genre {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem; letter-spacing: 0.18em;
+  color: #E82000; text-transform: uppercase;
+  margin: 0 0 8px;
+}
+.modal-origin {
+  display: inline-block;
+  background: #1E3FA8; color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.82rem; letter-spacing: 0.14em;
+  padding: 3px 12px; margin-bottom: 20px;
+}
+.modal-bio {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem; line-height: 1.75;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 32px;
+}
+.modal-videos-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem; letter-spacing: 0.18em;
+  color: #F7E600; text-transform: uppercase;
+  text-align: center; margin: 0 0 20px;
+}
+.modal-videos-label::before, .modal-videos-label::after { content: ' — '; color: #E82000; letter-spacing: 0; }
+.modal-videos-stack { display: flex; flex-direction: column; gap: 20px; }
+.modal-video-item {
+  background: #0a0a0a;
+  border: 1px solid rgba(247,230,0,0.18);
+  transition: border-color 0.2s;
+}
+.modal-video-item:hover { border-color: #F7E600; }
+.modal-video-responsive {
+  position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+}
+.modal-video-responsive iframe,
+.modal-video-responsive video {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; border: none;
+}
+.modal-video-footer {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-top: 1px solid rgba(247,230,0,0.1);
+}
+.modal-video-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem; letter-spacing: 0.1em; color: #F7E600;
+}
+.modal-video-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem; font-weight: 700;
+  color: rgba(255,255,255,0.3); letter-spacing: 0.08em; text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .modal-info { padding: 16px 16px 28px; }
 }
 
 /* ═══════════════════════════════════
@@ -517,92 +544,195 @@
 </section>
 
 <!-- ═══════════════════════════
-     ARTISTES
+     ARTISTES — Grille + Modals
 ═══════════════════════════ -->
 <section id="artistes" style="scroll-margin-top: 64px;">
-
-  <!-- Eyebrow label -->
-  <div class="artistes-eyebrow">
-    <p class="fg-section-sub">Premier artiste annoncé</p>
+  <div class="artistes-header">
+    <p class="fg-section-sub">Nos Artistes</p>
+    <h2 class="fg-section-title">Lineup 2026</h2>
+    <p class="artistes-hint">↓ Cliquez sur une affiche pour découvrir l'artiste ↓</p>
   </div>
 
-  <!-- Affiche : image complète, centrée -->
-  <div class="artiste-poster-wrap">
-    <div class="artiste-poster">
+  <div class="artistes-grid">
+
+    <div class="artiste-card" onclick="openModal('modal-ashlee')" role="button" tabindex="0" aria-label="Ashlee Watkins & Andrew Small">
+      <div class="artiste-card-img">
+        <img src="img/ashlee-andrew.png" alt="Ashlee Watkins & Andrew Small" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Ashlee Watkins &amp; Andrew Small</div>
+    </div>
+
+    <div class="artiste-card" onclick="openModal('modal-powell')" role="button" tabindex="0" aria-label="Dirk & Amélia Powell · Nadine Landry · Sammy Lind">
+      <div class="artiste-card-img">
+        <img src="img/powell-landry-lind.png" alt="Dirk & Amélia Powell · Nadine Landry · Sammy Lind" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Dirk &amp; Amélia Powell · Nadine Landry &amp; Sammy Lind</div>
+    </div>
+
+    <div class="artiste-card" onclick="openModal('modal-ginger')" role="button" tabindex="0" aria-label="La Famille Ginger">
+      <div class="artiste-card-img">
+        <img src="img/la-famille-ginger.png" alt="La Famille Ginger" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">La Famille Ginger</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ MODAL : Ashlee Watkins & Andrew Small ═══ -->
+<div id="modal-ashlee" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-ashlee')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-ashlee')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
       <img src="img/ashlee-andrew.png" alt="Ashlee Watkins & Andrew Small">
     </div>
-    <div class="artiste-poster-caption">
-      <h2 class="artiste-poster-name">Ashlee Watkins &amp; Andrew Small</h2>
-      <div class="artiste-poster-meta">
-        <span class="artiste-poster-genre">Bluegrass · Old-Time · Americana</span>
-        <span class="artiste-poster-origin">Floyd, Virginia · USA</span>
+    <div class="modal-info">
+      <h2 class="modal-name">Ashlee Watkins &amp; Andrew Small</h2>
+      <p class="modal-genre">Bluegrass · Old-Time · Americana</p>
+      <span class="modal-origin">Floyd, Virginia · USA</span>
+      <p class="modal-bio">
+        Duo installé à Floyd, Virginie, au cœur des Blue Ridge Mountains. Ashlee Watkins (originaire d'Australie) et Andrew Small (multi-instrumentiste primé — fiddle, mandoline, banjo) portent ensemble une musique trad américaine d'une authenticité rare, profondément ancrée dans la tradition des Appalaches. Ils animent le Floyd Radio Show au Floyd Country Store et se sont produits au Carter Family Fold, à MerleFest et aux Barns at Wolf Trap.
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/RXf6kO5jRVU" title="Sweet Thing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Sweet Thing</span>
+            <span class="modal-video-tag">Ashlee Watkins &amp; Andrew Small</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/PB8N-h8r780" title="Weary Lonesome Blues" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Weary Lonesome Blues</span>
+            <span class="modal-video-tag">Ashlee Watkins &amp; Andrew Small</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/I39q_4N6z18" title="Reuben's Train" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Reuben's Train</span>
+            <span class="modal-video-tag">Ashlee Watkins &amp; Andrew Small</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Bio discrète -->
-  <p class="artiste-bio-strip">
-    Duo installé à Floyd, Virginie, au cœur des Blue Ridge Mountains. Ashlee Watkins (originaire d'Australie) et Andrew Small (multi-instrumentiste primé — fiddle, mandoline, banjo) portent ensemble une musique acoustique d'une authenticité rare, profondément ancrée dans la tradition des Appalaches. Ensemble, ils animent le Floyd Radio Show au Floyd Country Store et se sont produits au Carter Family Fold, à MerleFest et aux Barns at Wolf Trap.
-  </p>
-
-  <!-- Vidéos grandes -->
-  <div class="videos-section">
-    <p class="videos-label">Écoutez-les</p>
-
-    <div class="videos-stack">
-
-      <div class="video-item">
-        <div class="video-responsive">
-          <iframe
-            src="https://www.youtube.com/embed/RXf6kO5jRVU"
-            title="Ashlee Watkins & Andrew Small — Sweet Thing"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-footer">
-          <span class="video-title">Sweet Thing</span>
-          <span class="video-artist-tag">Ashlee Watkins &amp; Andrew Small</span>
-        </div>
-      </div>
-
-      <div class="video-item">
-        <div class="video-responsive">
-          <iframe
-            src="https://www.youtube.com/embed/PB8N-h8r780"
-            title="Ashlee Watkins & Andrew Small — Weary Lonesome Blues"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-footer">
-          <span class="video-title">Weary Lonesome Blues</span>
-          <span class="video-artist-tag">Ashlee Watkins &amp; Andrew Small</span>
+<!-- ═══ MODAL : La Famille Ginger ═══ -->
+<div id="modal-ginger" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-ginger')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-ginger')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/la-famille-ginger.png" alt="La Famille Ginger">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">La Famille Ginger</h2>
+      <p class="modal-genre">Bluegrass · Old-Time · Folk</p>
+      <span class="modal-origin">France</span>
+      <p class="modal-bio">
+        La Famille Ginger est une formation française qui mêle bluegrass, old-time et folk avec une énergie communicative et une authenticité rare. Leur musique puise aux sources des traditions américaines et britanniques pour les faire résonner au cœur de l'Europe.
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/Zi01y5f6hMk" title="La Famille Ginger" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">La Famille Ginger</span>
+            <span class="modal-video-tag">La Famille Ginger</span>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
-      <div class="video-item">
-        <div class="video-responsive">
-          <iframe
-            src="https://www.youtube.com/embed/I39q_4N6z18"
-            title="Ashlee Watkins & Andrew Small — Reuben's Train"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
+<!-- ═══ MODAL : Powell · Landry · Lind ═══ -->
+<div id="modal-powell" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-powell')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-powell')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/powell-landry-lind.png" alt="Dirk & Amélia Powell · Nadine Landry · Sammy Lind">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Dirk &amp; Amélia Powell · Nadine Landry &amp; Sammy Lind</h2>
+      <p class="modal-genre">Old-Time · Cajun · Folk</p>
+      <span class="modal-origin">Louisiane · USA / Canada</span>
+      <p class="modal-bio">
+        Dirk Powell est l'un des musiciens de musique trad américaine les plus respectés — multi-instrumentiste, compositeur et passeur de culture entre Louisiane et Appalaches. Avec Amélia Powell, Nadine Landry et Sammy Lind, ils forment un quartet d'exception au carrefour du vieux-temps, du cajun et du folk nordique.
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <video controls preload="metadata">
+              <source src="video/powell-landry-lind.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Vidéo exclusive</span>
+            <span class="modal-video-tag">Powell · Landry · Lind</span>
+          </div>
         </div>
-        <div class="video-footer">
-          <span class="video-title">Reuben's Train</span>
-          <span class="video-artist-tag">Ashlee Watkins &amp; Andrew Small</span>
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/Lro2vxYMIJI" title="Dirk Powell" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Dirk Powell</span>
+            <span class="modal-video-tag">Powell · Landry · Lind</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/8Mxe63RIPoo" title="Dirk Powell" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Dirk Powell</span>
+            <span class="modal-video-tag">Powell · Landry · Lind</span>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
-    </div><!-- /videos-stack -->
-  </div><!-- /videos-section -->
-
-</section>
+<script>
+function openModal(id) {
+  var m = document.getElementById(id);
+  if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+}
+function closeModal(id) {
+  var m = document.getElementById(id);
+  if (m) {
+    m.classList.remove('open');
+    document.body.style.overflow = '';
+    m.querySelectorAll('iframe').forEach(function(f) { var s = f.src; f.src = ''; f.src = s; });
+    m.querySelectorAll('video').forEach(function(v) { v.pause(); });
+  }
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.artiste-modal.open').forEach(function(m) { closeModal(m.id); });
+  }
+});
+document.querySelectorAll('.artiste-card').forEach(function(c) {
+  c.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') c.click(); });
+});
+</script>
 
 <!-- ═══════════════════════════
      FAIRE UN DON
@@ -617,11 +747,13 @@
 
     <!-- Widget don HelloAsso — code officiel HelloAsso (intégration site) -->
     <div style="display: flex; justify-content: center; margin: 8px 0 12px;">
-      <iframe id="haWidgetLight" allowtransparency="true" allow="payment" scrolling="auto" src="https://www.helloasso.com/associations/foixgrass/formulaires/1/widget?view=form" style="width: clamp(300px, 100%, 26rem); margin: 0 auto; border: none;" onload="window.addEventListener('message', function(e) { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidgetLight');    if (dataHeight > parseFloat(haWidgetElement.height || 0)) { haWidgetElement.height = dataHeight + 'px';}})"></iframe>
+      <iframe id="haWidgetLight" allowtransparency="true" allow="payment" scrolling="auto" src="https://www.helloasso.com/associations/foixgrass/formulaires/1/widget?view=form" style="width: clamp(300px, 100%, 26rem); height: 650px; margin: 0 auto; border: none;" onload="window.addEventListener('message', function(e) { const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidgetLight');    if (dataHeight > parseFloat(haWidgetElement.height || 0)) { haWidgetElement.height = dataHeight + 'px';}})"></iframe>
     </div>
 
-    <!-- Bouton fallback : indispensable pour Samsung Internet (Galaxy S23) qui bloque l'iframe HelloAsso -->
-    <a href="https://www.helloasso.com/associations/foixgrass/formulaires/1" target="_blank" rel="noopener" class="fg-btn fg-btn-yellow" style="margin-top: 12px;">
+    <!-- Bouton fallback : indispensable pour Samsung Internet (Galaxy S23) qui bloque l'iframe HelloAsso.
+         IMPORTANT : URL avec suffixe /don (action explicite) — sans ce suffixe HelloAsso fait une
+         redirection desktop OK mais mobile 404. -->
+    <a href="https://www.helloasso.com/associations/foixgrass/formulaires/1/don" target="_blank" rel="noopener" class="fg-btn fg-btn-yellow" style="margin-top: 12px;">
       ❤️ Faire un don sur HelloAsso
     </a>
 
