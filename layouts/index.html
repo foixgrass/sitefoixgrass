@@ -585,6 +585,7 @@
       <div class="artiste-card-name">La Famille Ginger</div>
     </div>
 
+    <!-- DEAR A. — masqué temporairement, à révéler lors de l'annonce officielle
     <div class="artiste-card" onclick="openModal('modal-dear-a')" role="button" tabindex="0" aria-label="Dear A.">
       <div class="artiste-card-img">
         <img src="img/dear-a.png" alt="Dear A." loading="lazy">
@@ -592,6 +593,7 @@
       </div>
       <div class="artiste-card-name">Dear A.</div>
     </div>
+    -->
 
   </div>
 </section>
@@ -920,11 +922,19 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     <p class="fg-section-sub">Réserver sa place</p>
     <h2 class="fg-section-title">Billetterie</h2>
 
-    <p class="billetterie-text">
-      Places limitées — réservez dès maintenant pour assurer votre venue à ce premier FoixGrass !
-    </p>
+    <!-- ═══ ENCART OUVERTURE BILLETTERIE ═══ -->
+    <div style="margin: 0 auto 16px; max-width: 640px; border: 4px solid #F7E600; padding: 40px 32px; background: rgba(0,0,0,0.25);">
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(1rem,3vw,1.3rem); letter-spacing:0.2em; color:rgba(255,255,255,0.7); text-transform:uppercase; margin:0 0 12px;">La billetterie ouvre dans</p>
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,12vw,6rem); letter-spacing:0.05em; color:#F7E600; line-height:1; margin:0 0 8px;">JEUDI 7 MAI</p>
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(1.1rem,3.5vw,1.6rem); letter-spacing:0.15em; color:#fff; margin:0 0 28px;">Pass Festival · Pass 1 Jour · Masterclasses</p>
+      <hr style="border:none; border-top:2px solid rgba(247,230,0,0.3); margin: 0 0 28px;">
+      <p style="font-family:'Inter',sans-serif; font-size:0.95rem; color:rgba(255,255,255,0.75); line-height:1.7; margin:0;">
+        Places limitées — réservez dès l'ouverture pour assurer votre venue à ce premier FoixGrass !<br>
+        <strong style="color:#F7E600;">Tarif réduit disponible pour toute personne qui en ressent le besoin, sans justificatif.</strong>
+      </p>
+    </div>
 
-    <!-- Widget HelloAsso intégré -->
+    <!-- ═══ WIDGET HELLOASSO — réactiver le 7 mai ═══
     <div style="max-width: 700px; margin: 0 auto 24px; border: 3px solid #1A1A1A;">
       <iframe
         id="haWidget"
@@ -951,10 +961,10 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     <a href="https://www.helloasso.com/associations/foixgrass/evenements/foixgrass-festival" target="_blank" rel="noopener" class="fg-btn fg-btn-secondary" style="font-size:1.2rem; padding: 14px 36px;">
       🎟 Ouvrir la billetterie sur HelloAsso
     </a>
-
     <p style="margin-top: 16px; font-size: 0.88rem; color: rgba(255,255,255,0.6);">
       Paiement sécurisé via HelloAsso
     </p>
+    ═══ FIN WIDGET ═══ -->
   </div>
 </section>
 
