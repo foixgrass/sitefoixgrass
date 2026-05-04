@@ -161,6 +161,50 @@
   justify-content: center;
 }
 
+.hero-partners {
+  margin-top: 48px;
+  text-align: center;
+}
+.hero-partners-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(26,26,26,0.5);
+  margin: 0 0 14px;
+}
+.hero-partners-logos {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-partners-logos a {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+.hero-partners-logos a:hover { transform: scale(1.07); }
+.hero-partners-logos img {
+  height: 52px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  margin: 0 !important;
+  border: none;
+}
+/* Bluegrassoulet : mix-blend-mode multiply — le blanc du fond devient le jaune #F7E600 du hero */
+.hero-partners-logos img.logo-blend {
+  mix-blend-mode: multiply;
+}
+/* FBMA : fond rouge rectangulaire — arrondi + ombre légère */
+.hero-partners-logos img.logo-badge {
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(26,26,26,0.22);
+}
+
 /* ═══════════════════════════════════
    SECTION 2 — ARTISTES (grille + modals)
 ═══════════════════════════════════ */
@@ -546,6 +590,18 @@
   <div class="hero-ctas">
     <a href="#billetterie" class="fg-btn fg-btn-primary">🎟 Prendre mes billets</a>
     <a href="#don" class="fg-btn fg-btn-secondary">❤️ Soutenir le festival</a>
+  </div>
+
+  <div class="hero-partners">
+    <p class="hero-partners-label">Avec le soutien de</p>
+    <div class="hero-partners-logos">
+      <a href="https://france-bluegrass.fr/" target="_blank" rel="noopener" title="FBMA – France Bluegrass Music Association">
+        <img src="img/fbma-logo-menu.png" alt="FBMA – France Bluegrass Music Association" class="logo-badge">
+      </a>
+      <a href="https://bluegrassoulet.wixsite.com/bluegrassoulet" target="_blank" rel="noopener" title="Bluegrassoulet">
+        <img src="img/Bluegrassoulet-logo.jpg" alt="Bluegrassoulet" class="logo-blend">
+      </a>
+    </div>
   </div>
 </section>
 
