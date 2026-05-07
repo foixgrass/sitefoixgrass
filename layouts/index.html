@@ -663,6 +663,14 @@
       <div class="artiste-card-name">La Famille Ginger</div>
     </div>
 
+    <div class="artiste-card" onclick="openModal('modal-baked-beans')" role="button" tabindex="0" aria-label="Baked Beans">
+      <div class="artiste-card-img">
+        <img src="img/baked-beans.png" alt="Baked Beans" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Baked Beans</div>
+    </div>
+
     <div class="artiste-card artiste-card--mystery" style="cursor:default;">
       <div class="artiste-card-img" style="background:#111; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
         <span style="font-size:3rem; line-height:1;">🎸</span>
@@ -835,6 +843,60 @@
   </div>
 </div>
 
+<!-- ═══ MODAL : Baked Beans ═══ -->
+<div id="modal-baked-beans" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-baked-beans')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-baked-beans')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/baked-beans.png" alt="Baked Beans">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Baked Beans</h2>
+      <p class="modal-genre">Bluegrass · Roots</p>
+      <span class="modal-origin">Pays-Bas</span>
+      <p class="modal-bio">
+        Les Baked Beans viennent tout droit des Pays-Bas et joueront en duo banjo / guitare et voix avec leur énergie habituelle. Du bluegrass roots et énergique, qui fait bouger les pieds et sourire les oreilles — une formule simple et redoutablement efficace.
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-native">
+            <video controls preload="metadata">
+              <source src="video/baked-beans-leaving-home.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Leaving Home — Vevey</span>
+            <span class="modal-video-tag">Baked Beans</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-native">
+            <video controls preload="metadata">
+              <source src="video/baked-beans-sand-mountain.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Sand Mountain Blues</span>
+            <span class="modal-video-tag">Baked Beans</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-native">
+            <video controls preload="metadata">
+              <source src="video/baked-beans-your-long-journey.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Your Long Journey</span>
+            <span class="modal-video-tag">Baked Beans</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ MODAL : Dear A. ═══ -->
 <div id="modal-dear-a" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-dear-a')">
   <div class="modal-inner">
@@ -963,8 +1025,11 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     <!-- Hébergement -->
     <div style="margin-top: 48px; border-top: 2px solid rgba(247,230,0,0.25); padding-top: 40px;">
       <h3 style="font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:0.1em; color:#F7E600; text-align:center; margin:0 0 12px;">🏕 Hébergement</h3>
-      <p style="font-family:'Inter',sans-serif; font-size:0.95rem; line-height:1.75; color:rgba(255,255,255,0.85); text-align:center; max-width:620px; margin:0 auto 32px;">
-        Il n'y a pas d'hébergement sur le site du festival. Nous vous invitons à réserver à l'avance une place dans l'un des campings à proximité ou dans les nombreux gîtes et hébergements de la région.
+      <p style="font-family:'Inter',sans-serif; font-size:0.95rem; line-height:1.75; color:rgba(255,255,255,0.85); text-align:center; max-width:620px; margin:0 auto 16px;">
+        Un <strong style="color:#F7E600;">camping rustique est en cours d'organisation sur le site du festival</strong> — restez connectés pour les détails. Si vous préférez un peu de confort, les campings et gîtes des alentours sont à votre disposition.
+      </p>
+      <p style="font-family:'Inter',sans-serif; font-size:0.85rem; line-height:1.7; color:rgba(255,255,255,0.55); text-align:center; max-width:620px; margin:0 auto 28px;">
+        Pensez à réserver à l'avance — l'Ariège en août, c'est très demandé !
       </p>
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; max-width:900px; margin:0 auto;">
 
@@ -1009,17 +1074,10 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     <p class="fg-section-sub">Réserver sa place</p>
     <h2 class="fg-section-title">Billetterie</h2>
 
-    <!-- ═══ ENCART OUVERTURE BILLETTERIE ═══ -->
-    <div style="margin: 0 auto 16px; max-width: 640px; border: 4px solid #F7E600; padding: 40px 32px; background: rgba(0,0,0,0.25);">
-      <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(1rem,3vw,1.3rem); letter-spacing:0.2em; color:rgba(255,255,255,0.7); text-transform:uppercase; margin:0 0 12px;">La billetterie ouvre</p>
-      <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,12vw,6rem); letter-spacing:0.05em; color:#F7E600; line-height:1; margin:0 0 8px;">JEUDI 7 MAI</p>
-      <hr style="border:none; border-top:2px solid rgba(247,230,0,0.3); margin: 0 0 28px;">
-      <p style="font-family:'Inter',sans-serif; font-size:0.95rem; color:rgba(255,255,255,0.75); line-height:1.7; margin:0;">
-        Places limitées — réservez dès l'ouverture pour assurer votre venue à ce premier FoixGrass !
-      </p>
-    </div>
+    <p class="billetterie-text">
+      Places limitées — tarif réduit disponible sans justificatif pour toute personne qui en ressent le besoin.
+    </p>
 
-    <!-- ═══ WIDGET HELLOASSO — réactiver le 7 mai ═══
     <div style="max-width: 700px; margin: 0 auto 24px; border: 3px solid #1A1A1A;">
       <iframe
         id="haWidget"
@@ -1049,7 +1107,6 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     <p style="margin-top: 16px; font-size: 0.88rem; color: rgba(255,255,255,0.6);">
       Paiement sécurisé via HelloAsso
     </p>
-    ═══ FIN WIDGET ═══ -->
   </div>
 </section>
 
