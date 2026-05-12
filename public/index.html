@@ -230,6 +230,7 @@ body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45de
     <nav>
       <a href="#festival">Le Festival</a>
       <a href="#artistes">Artistes</a>
+      <a href="#masterclasses">Masterclasses</a>
       <a href="#infos">Infos Pratiques</a>
       <a href="#don">Faire un Don</a>
       <a href="#billetterie" class="nav-cta">🎟 Billetterie</a>
@@ -254,6 +255,7 @@ body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45de
   <button id="hm-close-btn" aria-label="Fermer le menu">&#x2715;</button>
   <a href="#festival">Le Festival</a>
   <a href="#artistes">Artistes</a>
+  <a href="#masterclasses">Masterclasses</a>
   <a href="#infos">Infos Pratiques</a>
   <a href="#don">Faire un Don</a>
   <a href="#billetterie" class="nav-cta-mobile">🎟 Billetterie</a>
@@ -831,6 +833,28 @@ body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45de
 .fg-footer a { color: #F7E600; text-decoration: none; }
 .fg-footer a:hover { color: #E82000; }
 .fg-footer strong { color: #fff; }
+.fg-footer-social {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 16px 0 12px;
+}
+.fg-footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border: 2px solid rgba(247,230,0,0.35);
+  border-radius: 50%;
+  color: rgba(255,255,255,0.6);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.fg-footer-social a:hover {
+  border-color: #F7E600;
+  color: #F7E600;
+  background: rgba(247,230,0,0.08);
+}
+.fg-footer-social svg { width: 18px; height: 18px; fill: currentColor; }
 
  
 @media (max-width: 640px) {
@@ -909,16 +933,70 @@ body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45de
       <div class="artiste-card-name">La Famille Ginger</div>
     </div>
 
-    <div class="artiste-card artiste-card--mystery" style="cursor:default;">
-      <div class="artiste-card-img" style="background:#111; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
-        <span style="font-size:3rem; line-height:1;">🎸</span>
-        <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(1.2rem,3vw,1.8rem); letter-spacing:0.12em; color:#F7E600; text-align:center; padding:0 12px; line-height:1.2;">Et d'autres encore…</p>
-        <p style="font-family:'Inter',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.4); text-align:center;">Annonces à venir</p>
+    <div class="artiste-card" onclick="openModal('modal-baked-beans')" role="button" tabindex="0" aria-label="Baked Beans">
+      <div class="artiste-card-img">
+        <img src="img/Baked%20Beans%20affiche.png" alt="Baked Beans" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
       </div>
-      <div class="artiste-card-name" style="color:rgba(247,230,0,0.5); font-style:italic;">Lineup complet bientôt</div>
+      <div class="artiste-card-name">Baked Beans</div>
     </div>
 
-    
+    <div class="artiste-card" onclick="openModal('modal-dcc')" role="button" tabindex="0" aria-label="Dublin Country Club">
+      <div class="artiste-card-img">
+        <img src="img/dublin-country-club.png" alt="Dublin Country Club" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Dublin Country Club</div>
+    </div>
+
+    <div class="artiste-card" onclick="openModal('modal-dear-a')" role="button" tabindex="0" aria-label="Dear A.">
+      <div class="artiste-card-img">
+        <img src="img/dear-a.png" alt="Dear A." loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Dear A.</div>
+    </div>
+
+    <div class="artiste-card" onclick="openModal('modal-doblo')" role="button" tabindex="0" aria-label="Doblo Mountain Boys">
+      <div class="artiste-card-img">
+        <img src="img/doblo-mountain-boys.png" alt="Doblo Mountain Boys" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Doblo Mountain Boys</div>
+    </div>
+
+    <div class="artiste-card" onclick="openModal('modal-camel-fly')" role="button" tabindex="0" aria-label="Camel Fly">
+      <div class="artiste-card-img">
+        <img src="img/camel-fly.png" alt="Camel Fly" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Camel Fly</div>
+    </div>
+
+    <div class="artiste-card" onclick="openModal('modal-sweet-potato')" role="button" tabindex="0" aria-label="Sweet Potato Vine">
+      <div class="artiste-card-img">
+        <img src="img/sweet-potato-vine.png" alt="Sweet Potato Vine" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Sweet Potato Vine</div>
+    </div>
+
+    <div class="artiste-card" onclick="openModal('modal-rural-singers')" role="button" tabindex="0" aria-label="Rural Singers">
+      <div class="artiste-card-img">
+        <img src="img/rural-singers.png" alt="Rural Singers" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Rural Singers</div>
+    </div>
+
+    <div class="artiste-card" onclick="openModal('modal-stella')" role="button" tabindex="0" aria-label="Stella Might Come">
+      <div class="artiste-card-img">
+        <img src="img/stella-might-come.png" alt="Stella Might Come" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Stella Might Come</div>
+    </div>
+
 
   </div>
 </section>
@@ -932,7 +1010,7 @@ body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45de
     </div>
     <div class="modal-info">
       <h2 class="modal-name">Ashlee Watkins &amp; Andrew Small</h2>
-      <p class="modal-genre">Bluegrass · Old-Time · Americana</p>
+      <p class="modal-genre">Bluegrass · Old-Time Country Music</p>
       <span class="modal-origin">Floyd, Virginia · USA</span>
       <p class="modal-bio">
         Duo installé à Floyd, Virginie, au cœur des Blue Ridge Mountains. Ashlee Watkins (originaire d'Australie) et Andrew Small (multi-instrumentiste primé — fiddle, mandoline, banjo) portent ensemble une musique trad américaine d'une authenticité rare, profondément ancrée dans la tradition des Appalaches. Ils animent le Floyd Radio Show au Floyd Country Store et se sont produits au Carter Family Fold, à MerleFest et aux Barns at Wolf Trap.
@@ -1019,7 +1097,7 @@ body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45de
     </div>
     <div class="modal-info">
       <h2 class="modal-name">Dirk &amp; Amélia Powell · Nadine Landry &amp; Sammy Lind</h2>
-      <p class="modal-genre">Old-Time · Cajun · Folk</p>
+      <p class="modal-genre">Old-Time · Cajun</p>
       <span class="modal-origin">Louisiane · USA / Canada</span>
       <p class="modal-bio">
         Dirk et Amélia Powell forment un duo père-fille enraciné dans deux grandes traditions américaines : les bayous cajuns de Louisiane et les montagnes du Kentucky. Le grand-père d'Amélia, Dewey Balfa, était l'une des figures majeures de la musique cajun. Dirk, lui, a appris le banjo, le violon et la guitare auprès de son propre grand-père, J.C. Hay. Considéré depuis des décennies comme un « musicien parmi les musiciens », il a tourné avec Joan Baez, Eric Clapton, Loretta Lynn et Rhiannon Giddens. Amélia apporte une voix pleine d'émotion et un jeu de guitare énergique. Ensemble, ils interprètent l'héritage de leur famille avec confiance, humour et amour.
@@ -1074,6 +1152,259 @@ body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45de
 </div>
 
 
+<div id="modal-baked-beans" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-baked-beans')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-baked-beans')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/Baked%20Beans%20affiche.png" alt="Baked Beans">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Baked Beans</h2>
+      <p class="modal-genre">Bluegrass · Roots</p>
+      <span class="modal-origin">Pays-Bas</span>
+      <p class="modal-bio">
+        Les Baked Beans viennent tout droit des Pays-Bas et joueront en duo banjo / guitare et voix avec leur énergie habituelle. Du bluegrass roots et énergique, qui fait bouger les pieds et sourire les oreilles — une formule simple et redoutablement efficace.
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-native">
+            <video controls preload="metadata">
+              <source src="video/Baked%20Beans-%20Leaving%20Home%20Vevey.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Leaving Home — Vevey</span>
+            <span class="modal-video-tag">Baked Beans</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-native">
+            <video controls preload="metadata">
+              <source src="video/Sand%20Mountain%20Blues%20-%20Baked%20Beans.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Sand Mountain Blues</span>
+            <span class="modal-video-tag">Baked Beans</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-native">
+            <video controls preload="metadata">
+              <source src="video/Your%20long%20journey%20-%20Baked%20Beans%20.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Your Long Journey</span>
+            <span class="modal-video-tag">Baked Beans</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="modal-rural-singers" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-rural-singers')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-rural-singers')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/rural-singers.png" alt="Rural Singers">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Rural Singers</h2>
+      <p class="modal-genre">Bluegrass</p>
+      <span class="modal-origin">Ariège, France</span>
+      <p class="modal-bio">
+        Groupe ariégeois avec guitare, mandoline, harmonica et contrebasse, les Rural Singers mettent l'ambiance partout où ils passent. Un set composé de classiques du bluegrass, des protest-songs folk du début du 20e siècle et des compositions originales. Une touche punk-rock s'ajoute au bluegrass traditionnel pour donner à l'ensemble une superbe énergie et une patte particulière à ce groupe.
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div style="max-width:280px; margin:0 auto;">
+            <div style="position:relative; padding-bottom:177.78%; height:0; overflow:hidden;">
+              <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3851291618449627&show_text=false" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Rural Singers — Reel</span>
+            <span class="modal-video-tag">Rural Singers</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/R-xH1gvlFcY" title="Rural Singers" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Rural Singers</span>
+            <span class="modal-video-tag">Rural Singers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="modal-stella" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-stella')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-stella')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/stella-might-come.png" alt="Stella Might Come">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Stella Might Come</h2>
+      <p class="modal-genre">Bluegrass · Old-Time · Folk</p>
+      <span class="modal-origin">France</span>
+      <p class="modal-bio">
+        Duo bluegrass, old-time et folk composé de Danielle Titley à la guitare et au banjo, et de François Verguet à la guitare. Ce nouveau groupe est à l'origine un quartet, mais sera présent en duo à FoixGrass.<br><br>
+        Danielle Titley a écumé les scènes bluegrass françaises avec le Jack Danielle String Band et lance désormais ce nouveau projet.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div id="modal-camel-fly" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-camel-fly')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-camel-fly')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/camel-fly.png" alt="Camel Fly">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Camel Fly</h2>
+      <p class="modal-genre">Bluegrass</p>
+      <span class="modal-origin">Tarn, France</span>
+      <p class="modal-bio">
+        Camel Fly est le tout nouveau projet des virtuoses Damien Mélich (guitare) et Fred Simon (banjo). Ils proposent un bluegrass moderne inspiré fortement de Béla Fleck et mêlé d'influences jazz. Basés dans le Tarn, ils seront en duo sur le festival.
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/olCF3jzNgGE" title="Camel Fly" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Camel Fly</span>
+            <span class="modal-video-tag">Camel Fly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="modal-sweet-potato" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-sweet-potato')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-sweet-potato')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/sweet-potato-vine.png" alt="Sweet Potato Vine">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Sweet Potato Vine</h2>
+      <p class="modal-genre">Bluegrass · Folk · Old-Time</p>
+      <span class="modal-origin">France</span>
+      <p class="modal-bio">
+        Sweet Potato Vine est un groupe festif et coloré qui s'inspire des racines profondes de la musique Folk Américaine &amp; Old Time tout en ajoutant une touche supplémentaire de fraîcheur et de fun, incluant guitare, banjo, contrebasse, violon et voix en harmonies.<br><br>
+        <span style="color:rgba(247,230,0,0.8);">Lineup :</span> Noémie Charmetant (contrebasse · Lyon), Jake Braunecker (guitare/banjo), Léa Desplat (guitare &amp; chant), Maël Mesurolle (violon).
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/T1SWFhK9gn4" title="Sweet Potato Vine" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Sweet Potato Vine</span>
+            <span class="modal-video-tag">Sweet Potato Vine</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="modal-doblo" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-doblo')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-doblo')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/doblo-mountain-boys.png" alt="Doblo Mountain Boys">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Doblo Mountain Boys</h2>
+      <p class="modal-genre">Bluegrass · Old-Time</p>
+      <span class="modal-origin">Rennes, France</span>
+      <p class="modal-bio">
+        Originaire de Rennes et composé de Félix Masson (mandoline, flûtes, chant), Michael Babaz (banjo) et Olivier Genel (guitare), ce groupe joyeux et soudé pratique une musique acoustique d'origine américaine, aux influences irlandaises.<br><br>
+        Les trois membres se rencontrent en se croisant entre la Bretagne et la région parisienne et jouent ensemble de manière informelle depuis maintenant presque une décennie. Mais c'est en 2018 que le trio décide de se rassembler sous un nom de groupe et d'explorer les voies du Bluegrass, ce qu'ils appellent leur « Quête de l'Ultime Vitesse », allant chercher la tradition chez les anciens de cette musique comme chez les instrumentistes de leur âge (et internet). Après quelques années de travail acharné en colocation, de jams en tournées, de rencontres en collaborations, les membres se trouvent à jouer dans d'autres formations similaires mais conservent avec ce groupe une alchimie et une complicité exceptionnelles.
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/fGHP5zZpTtM" title="Doblo Mountain Boys — cover Dirk Powell" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Cover Dirk Powell</span>
+            <span class="modal-video-tag">Doblo Mountain Boys</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/LX6YC3-T7as" title="Doblo Mountain Boys" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Doblo Mountain Boys</span>
+            <span class="modal-video-tag">Doblo Mountain Boys</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="modal-dcc" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-dcc')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-dcc')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/dublin-country-club.png" alt="Dublin Country Club">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Dublin Country Club</h2>
+      <p class="modal-genre">Country · Honky Tonk</p>
+      <span class="modal-origin">Dublin, Irlande</span>
+      <p class="modal-bio">
+        Né dans l'arrière-pays sauvage et indompté de Dublin, coincé entre une ruelle sombre et votre friterie préférée, le Dublin Country Club (DCC) a vu le jour par hasard : des amis ont formé un groupe par inadvertance, alors qu'ils tentaient tant bien que mal de commander des pintes après la fermeture. Ce qui a commencé par quelques sessions endiablées s'est rapidement transformé en un rodéo musical alimenté par des cris de « yee-haw ».<br><br>
+        Avec une lineup tournant de musiciens marginaux, de souriants et, parfois, de virtuoses du washboard et du triangle, le DCC mélange des sons du monde entier avec une touche country et un clin d'œil.<br><br>
+        Leur quartier général est l'Arthur's Pub sur Thomas Street, où chaque mardi est un « Honky Tonk Tuesday ». le DCC est lié à ce rassemblement hebdomadaire bruyant, rempli de riffs endiablés, d'harmonies qui frappent comme un shot de whisky, et de rythmes de train suffisants pour faire avancer une véritable locomotive. Qu'ils fassent fondre les cœurs, cassent des cordes ou volent accidentellement du bétail, le DCC est là pour une seule chose : faire hurler le « yee-haw » et maintenir le chaos country dangereusement vivant.
+      </p>
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:0.85rem; letter-spacing:0.14em; color:rgba(247,230,0,0.45); text-transform:uppercase; margin:0 0 16px; border-top:1px solid rgba(247,230,0,0.12); padding-top:16px;">In English</p>
+      <p class="modal-bio" style="color:rgba(255,255,255,0.45); font-size:0.85rem; margin-bottom:32px;">
+        Born in the wild, untamed outback of Dublin, squeezed between the dodgy laneway and your favourite greasy chipper, Dublin Country Club (DCC) stumbled into existence when a group of friends accidentally formed a band while fumbling to order pints after last call. What began as a few rowdy seisiúns quickly spiralled into a yee-haw-fuelled musical rodeo.<br><br>
+        With a rotating cast of misfit pickers, grinners, and occasional washboard and triangle virtuosos, DCC wrangles together global sounds with a country kick and a wink.<br><br>
+        Their spiritual headquarters, Arthur's Pub on Thomas Street, where each Tuesday is a Honky Tonk Tuesday, the DCC are bound to a ritualistic raucous hoedown packed with blistering licks, harmonies that hit like a whiskey shot, and enough train rhythms to summon an actual locomotive. Whether they're melting hearts, breaking strings, or accidentally stealing livestock, DCC is here for one thing: to yee your haw and keep the country chaos dangerously alive.
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/8lls7bf66E8" title="Dublin Country Club" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Dublin Country Club</span>
+            <span class="modal-video-tag">Dublin Country Club</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div id="modal-dear-a" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-dear-a')">
   <div class="modal-inner">
     <button class="modal-close" onclick="closeModal('modal-dear-a')" aria-label="Fermer">✕</button>
@@ -1082,7 +1413,7 @@ body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45de
     </div>
     <div class="modal-info">
       <h2 class="modal-name">Dear A.</h2>
-      <p class="modal-genre">Old-Time · Country · Bluegrass</p>
+      <p class="modal-genre">Country · Bluegrass</p>
       <span class="modal-origin">France</span>
       <p class="modal-bio">
         Dear A. explore un répertoire nord-américain qui invite au voyage à travers les époques. Des ballades old-time à la country music, sans oublier le bluegrass, le duo interprète ces musiques dans leur forme la plus authentique : deux voix, deux guitares, et une alchimie sincère. Les timbres s'entrelacent, alternant douceur et énergie, comme une caresse portée par les harmonies délicates d'Adèle et Arthur.
@@ -1104,19 +1435,58 @@ body.nav-open .hm-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45de
 </div>
 
 <script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(function(f) {
+    if (f.src.indexOf('enablejsapi') === -1) {
+      f.dataset.src = f.src + (f.src.indexOf('?') === -1 ? '?' : '&') + 'enablejsapi=1';
+      f.src = f.dataset.src;
+    } else {
+      f.dataset.src = f.src;
+    }
+  });
+});
+
 function openModal(id) {
   var m = document.getElementById(id);
-  if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  if (!m) return;
+  
+  m.querySelectorAll('iframe[data-src]').forEach(function(f) {
+    f.src = f.dataset.src;
+  });
+  m.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
+
 function closeModal(id) {
   var m = document.getElementById(id);
-  if (m) {
-    m.classList.remove('open');
-    document.body.style.overflow = '';
-    m.querySelectorAll('iframe').forEach(function(f) { var s = f.src; f.src = ''; f.src = s; });
-    m.querySelectorAll('video').forEach(function(v) { v.pause(); });
-  }
+  if (!m) return;
+
+  
+  m.querySelectorAll('iframe').forEach(function(f) {
+    var src = f.src;
+    
+    try {
+      f.contentWindow.postMessage(
+        JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*'
+      );
+    } catch(e) {}
+    
+    if (src && src !== 'about:blank' && src !== window.location.href) {
+      f.dataset.src = src;
+    }
+    
+    f.src = 'about:blank';
+  });
+
+  m.querySelectorAll('video').forEach(function(v) { v.pause(); v.currentTime = 0; });
+
+  
+  m.classList.remove('open');
+  document.body.style.overflow = '';
 }
+
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     document.querySelectorAll('.artiste-modal.open').forEach(function(m) { closeModal(m.id); });
@@ -1126,6 +1496,273 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
   c.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') c.click(); });
 });
 </script>
+
+
+<section id="masterclasses" style="scroll-margin-top: 64px;">
+<style>
+#masterclasses {
+  background: #F7E600;
+  color: #1A1A1A;
+  border-bottom: 4px solid #1A1A1A;
+  overflow: hidden;
+}
+
+ 
+.mc-banner {
+  position: relative;
+  height: 220px;
+  background: url('img/jam.jpg') center 40% / cover no-repeat;
+  border-bottom: 3px solid #1A1A1A;
+}
+.mc-banner-overlay {
+  position: absolute; inset: 0;
+  background: rgba(26,26,26,0.62);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 6px;
+}
+.mc-banner .fg-section-sub  { color: rgba(247,230,0,0.7); margin: 0; }
+.mc-banner .fg-section-title { color: #F7E600; margin: 0; }
+
+ 
+.mc-body {
+  padding: 56px 24px 64px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+ 
+.mc-intro-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.mc-price-badge {
+  background: #E82000;
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.12em;
+  padding: 8px 28px;
+  border: 3px solid #1A1A1A;
+  line-height: 1;
+}
+.mc-intro-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1A1A1A;
+}
+
+ 
+.mc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+}
+@media (max-width: 900px) { .mc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .mc-grid { grid-template-columns: 1fr; max-width: 320px; margin-left:auto; margin-right:auto; } }
+
+ 
+.mc-card {
+  background: #1A1A1A;
+  border: 2px solid #1A1A1A;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.mc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 #E82000;
+}
+
+ 
+.mc-card-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  line-height: 0;
+  border-bottom: 3px solid #F7E600;
+}
+.mc-card-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  margin: 0 !important;
+  transition: transform 0.4s ease;
+}
+.mc-card:hover .mc-card-photo img { transform: scale(1.05); }
+
+ 
+.mc-card-body {
+  padding: 14px 14px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mc-card-instrument {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  color: #E82000;
+  line-height: 1.2;
+  margin: 0;
+}
+.mc-card-with {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(247,230,0,0.5);
+  margin: 0;
+}
+.mc-card-artist {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  color: #F7E600;
+  line-height: 1.1;
+  margin: 0;
+}
+.mc-card-funfact {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+  margin: 6px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(247,230,0,0.12);
+}
+.mc-card-funfact::before { content: '★  '; color: #F7E600; font-style: normal; }
+
+ 
+.mc-deco-bottom {
+  position: relative;
+  height: 120px;
+  background: url('img/instrument.jpg') center 55% / cover no-repeat;
+  border-top: 3px solid #1A1A1A;
+  margin-top: 0;
+}
+.mc-deco-bottom::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(247,230,0,0.45);
+}
+
+ 
+.mc-coming {
+  text-align: center;
+  border: 3px dashed rgba(26,26,26,0.3);
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.35);
+  margin-bottom: 0;
+}
+.mc-coming-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  color: #1A1A1A;
+  margin: 0 0 8px;
+}
+.mc-coming p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: rgba(26,26,26,0.75);
+  margin: 0 0 4px;
+  line-height: 1.65;
+}
+.mc-coming p:last-child { margin: 0; color: rgba(26,26,26,0.5); font-size:0.8rem; }
+</style>
+
+  
+  <div class="mc-banner">
+    <div class="mc-banner-overlay">
+      <p class="fg-section-sub">Apprenez avec les meilleurs</p>
+      <h2 class="fg-section-title">Masterclasses</h2>
+    </div>
+  </div>
+
+  
+  <div class="mc-body">
+
+    
+    <div class="mc-intro-bar">
+      <span class="mc-price-badge">20 € / masterclass</span>
+      <span class="mc-intro-text">Ateliers de 1h30 · animés par les artistes invités</span>
+    </div>
+
+    
+    <div class="mc-grid">
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-dirk-powell.jpg" alt="Dirk Powell" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Accordéon Cajun</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Dirk Powell</p>
+        </div>
+      </div>
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-amelia-powell.png" alt="Amélia Powell" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Guitare Old-Time &amp; Cajun</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Amélia Powell</p>
+        </div>
+      </div>
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-sammy-lind.jpg" alt="Sammy Lind" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Fiddle Old-Time</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Sammy Lind</p>
+        </div>
+      </div>
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-nadine-landry.jpg" alt="Nadine Landry" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Contrebasse</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Nadine Landry</p>
+          <p class="mc-card-funfact">C'est elle qui a donné son nom au fameux micro « Nadine » de Ear Trumpet Labs.</p>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <div class="mc-coming">
+      <p class="mc-coming-title">🎸 D'autres masterclasses à venir</p>
+      <p>Planning complet et billetterie ouvrent bientôt.</p>
+      <p>Restez connectés pour ne rien manquer !</p>
+    </div>
+
+  </div>
+
+  
+  <div class="mc-deco-bottom"></div>
+
+</section>
 
 
 <section id="don" style="scroll-margin-top: 64px;">
@@ -1195,8 +1832,11 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     
     <div style="margin-top: 48px; border-top: 2px solid rgba(247,230,0,0.25); padding-top: 40px;">
       <h3 style="font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:0.1em; color:#F7E600; text-align:center; margin:0 0 12px;">🏕 Hébergement</h3>
-      <p style="font-family:'Inter',sans-serif; font-size:0.95rem; line-height:1.75; color:rgba(255,255,255,0.85); text-align:center; max-width:620px; margin:0 auto 32px;">
-        Il n'y a pas d'hébergement sur le site du festival. Nous vous invitons à réserver à l'avance une place dans l'un des campings à proximité ou dans les nombreux gîtes et hébergements de la région.
+      <p style="font-family:'Inter',sans-serif; font-size:0.95rem; line-height:1.75; color:rgba(255,255,255,0.85); text-align:center; max-width:620px; margin:0 auto 16px;">
+        Un <strong style="color:#F7E600;">camping rustique est en cours d'organisation sur le site du festival</strong> — restez connectés pour les détails. Si vous préférez un peu de confort, les campings et gîtes des alentours sont à votre disposition.
+      </p>
+      <p style="font-family:'Inter',sans-serif; font-size:0.85rem; line-height:1.7; color:rgba(255,255,255,0.55); text-align:center; max-width:620px; margin:0 auto 28px;">
+        Pensez à réserver à l'avance — l'Ariège en août, c'est très demandé !
       </p>
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; max-width:900px; margin:0 auto;">
 
@@ -1240,21 +1880,76 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     <h2 class="fg-section-title">Billetterie</h2>
 
     
-    <div style="margin: 0 auto 16px; max-width: 640px; border: 4px solid #F7E600; padding: 40px 32px; background: rgba(0,0,0,0.25);">
-      <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(1rem,3vw,1.3rem); letter-spacing:0.2em; color:rgba(255,255,255,0.7); text-transform:uppercase; margin:0 0 12px;">La billetterie ouvre</p>
-      <p style="font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,12vw,6rem); letter-spacing:0.05em; color:#F7E600; line-height:1; margin:0 0 8px;">JEUDI 7 MAI</p>
-      <hr style="border:none; border-top:2px solid rgba(247,230,0,0.3); margin: 0 0 28px;">
-      <p style="font-family:'Inter',sans-serif; font-size:0.95rem; color:rgba(255,255,255,0.75); line-height:1.7; margin:0;">
-        Places limitées — réservez dès l'ouverture pour assurer votre venue à ce premier FoixGrass !
+    <div style="margin: 0 auto 36px; max-width: 640px; border: 2px dashed rgba(247,230,0,0.4); padding: 28px 32px; background: rgba(0,0,0,0.2);">
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.2em; color:rgba(247,230,0,0.6); text-transform:uppercase; margin:0 0 18px;">Bientôt en vente — dès la publication du programme</p>
+
+      <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-bottom:18px;">
+
+        <div style="text-align:center;">
+          <p style="font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.12em; color:#fff; margin:0 0 4px;">Pass 1 Jour</p>
+          <p style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#F7E600; line-height:1; margin:0 0 2px;">18 € <span style="font-size:1.6rem; color:#F7E600;">/ 12 €</span></p>
+          <p style="font-family:'Inter',sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.5); margin:0;">plein tarif / réduit &amp; Ariège</p>
+        </div>
+
+        <div style="width:1px; background:rgba(247,230,0,0.2); flex-shrink:0;"></div>
+
+        <div style="text-align:center;">
+          <p style="font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.12em; color:#fff; margin:0 0 4px;">Masterclasses <span style="font-size:0.8rem; color:rgba(255,255,255,0.5);">(1h30)</span></p>
+          <p style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#F7E600; line-height:1; margin:0 0 2px;">20 €</p>
+          <p style="font-family:'Inter',sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.5); margin:0;">tarif unique</p>
+        </div>
+
+      </div>
+
+      <p style="font-family:'Inter',sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.45); margin:0; font-style:italic;">
+        Tarif réduit sans justificatif — accessible à toute personne qui en ressent le besoin.
       </p>
     </div>
 
-    
+    <div style="max-width: 700px; margin: 0 auto 24px; border: 3px solid #1A1A1A;">
+      <iframe
+        id="haWidget"
+        allowtransparency="true"
+        allow="payment"
+        scrolling="auto"
+        src="https://www.helloasso.com/associations/foixgrass/evenements/foixgrass-festival/widget"
+        style="width: 100%; height: 750px; min-height: 600px; border: none; display: block;">
+      </iframe>
+    </div>
+    <script>
+    window.addEventListener('message', function(e) {
+      if (e.origin !== 'https://www.helloasso.com') return;
+      try {
+        var d = (typeof e.data === 'string') ? JSON.parse(e.data) : e.data;
+        var h = d && (d.height || d.data && d.data.height);
+        if (h && h > 100) {
+          var el = document.getElementById('haWidget');
+          if (el) el.style.height = h + 'px';
+        }
+      } catch(err) {}
+    });
+    </script>
+    <a href="https://www.helloasso.com/associations/foixgrass/evenements/foixgrass-festival" target="_blank" rel="noopener" class="fg-btn fg-btn-secondary" style="font-size:1.2rem; padding: 14px 36px;">
+      🎟 Ouvrir la billetterie sur HelloAsso
+    </a>
+    <p style="margin-top: 16px; font-size: 0.88rem; color: rgba(255,255,255,0.6);">
+      Paiement sécurisé via HelloAsso
+    </p>
   </div>
 </section>
 
 
 <footer class="fg-footer">
+
+  <div class="fg-footer-social">
+    <a href="https://www.instagram.com/foixgrass" target="_blank" rel="noopener" aria-label="FoixGrass sur Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/foixgrass" target="_blank" rel="noopener" aria-label="FoixGrass sur Facebook">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+  </div>
+
   <p>
     <strong>FoixGrass Festival</strong> — Association FOIXGRASS · SIREN 104 418 983<br>
     Salle des fêtes de Ganac, 09000 Ganac · Ariège<br>
