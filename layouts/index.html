@@ -174,6 +174,44 @@
   color: rgba(26,26,26,0.5);
   margin: 0 0 14px;
 }
+/* Partenaires principaux — logos centrés et mis en avant */
+.hero-partners-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 auto 8px;
+}
+.hero-partner-main {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+.hero-partner-main:hover { transform: scale(1.05); }
+.hero-partner-main img {
+  height: 96px;
+  width: auto;
+}
+/* Badge blanc arrondi (Brasserie de la Fourche) */
+.hero-partner-main img.pm-badge {
+  border-radius: 10px;
+  background: #fff;
+  padding: 6px;
+  border: 2px solid rgba(26,26,26,0.14);
+  box-shadow: 0 3px 12px rgba(26,26,26,0.28);
+}
+.hero-partner-main-tag {
+  display: block;
+  text-align: center;
+  margin: 0 auto 26px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(26,26,26,0.55);
+}
 .hero-partners-logos {
   display: flex;
   gap: 28px;
@@ -608,12 +646,12 @@
 
   <h1 class="hero-title">FoixGrass</h1>
   <p class="hero-subtitle">Festival de Bluegrass</p>
-  <p class="hero-lieu">📍 Ganac, Ariège (09) — 20 · 21 · 22 · 23 Août 2026</p>
+  <p class="hero-lieu">📍 Ganac, Ariège (09) — 19 · 20 · 21 · 22 · 23 Août 2026</p>
 
   <hr class="hero-divider">
 
   <p class="hero-tagline">
-    Quatre jours de musique trad américaine au pied des Pyrénées — bluegrass, old-time, cajun et country dans le village de Ganac, en plein cœur de l'Ariège.
+    Cinq jours de musique trad américaine au pied des Pyrénées — bluegrass, old-time, cajun et country dans le village de Ganac, en plein cœur de l'Ariège.
   </p>
 
   <div class="hero-ctas">
@@ -623,12 +661,18 @@
 
   <div class="hero-partners">
     <p class="hero-partners-label">Avec le soutien de</p>
+    <div class="hero-partners-main">
+      <a class="hero-partner-main" href="https://labrasseriedelafourche.fr/" target="_blank" rel="noopener" title="Brasserie de la Fourche">
+        <img src="img/partner-brasserie-fourche.jpg" alt="Brasserie de la Fourche" class="pm-badge">
+      </a>
+      <a class="hero-partner-main" href="https://bluegrassoulet.wixsite.com/bluegrassoulet" target="_blank" rel="noopener" title="Bluegrassoulet">
+        <img src="img/bluegrassoulet-yellow.jpg" alt="Bluegrassoulet">
+      </a>
+    </div>
+    <span class="hero-partner-main-tag">Partenaires principaux</span>
     <div class="hero-partners-logos">
       <a href="https://france-bluegrass.fr/" target="_blank" rel="noopener" title="FBMA – France Bluegrass Music Association">
         <img src="img/fbma-logo-menu.png" alt="FBMA – France Bluegrass Music Association" class="logo-badge">
-      </a>
-      <a href="https://bluegrassoulet.wixsite.com/bluegrassoulet" target="_blank" rel="noopener" title="Bluegrassoulet">
-        <img src="img/Bluegrassoulet-logo.jpg" alt="Bluegrassoulet" class="logo-blend">
       </a>
       <a href="https://toulousefolksociety.fr/" target="_blank" rel="noopener" title="Toulouse Folk Society">
         <img src="img/logo-tfs.png" alt="Toulouse Folk Society" class="logo-badge">
@@ -636,18 +680,18 @@
       <a href="https://foixgrass.festicar.io/" target="_blank" rel="noopener" title="Festicar — Covoiturage du festival">
         <img src="img/partner-festicar.png" alt="Festicar — covoiturage du festival">
       </a>
-      <span title="Le Noi">
+      <a href="https://www.guide-toulouse-pyrenees.com/fr/tourisme/se-restaurer/restaurants/foix-119/noi-8691.html" target="_blank" rel="noopener" title="Le Noi — Restaurant à Foix">
         <img src="img/partner-le-noi.jpg" alt="Le Noi" class="logo-badge">
-      </span>
+      </a>
       <span title="Canon Canon">
         <img src="img/partner-canon-canon.png" alt="Canon Canon">
       </span>
-      <span title="Le Passe-Temps">
+      <a href="https://www.instagram.com/lepassetemps.foix/" target="_blank" rel="noopener" title="Le Passe-Temps — Foix">
         <img src="img/partner-passe-temps.jpg" alt="Le Passe-Temps" class="logo-rounded">
-      </span>
-      <span title="Raws">
+      </a>
+      <a href="https://www.youtube.com/@raws31" target="_blank" rel="noopener" title="Raws">
         <img src="img/partner-raws.jpg" alt="Raws" class="logo-rounded">
-      </span>
+      </a>
     </div>
   </div>
 </section>
@@ -704,12 +748,12 @@
       <div class="artiste-card-name">Dublin Country Club</div>
     </div>
 
-    <div class="artiste-card" onclick="openModal('modal-dear-a')" role="button" tabindex="0" aria-label="Dear A.">
+    <div class="artiste-card" onclick="openModal('modal-sweet-potato')" role="button" tabindex="0" aria-label="Sweet Potato Vine">
       <div class="artiste-card-img">
-        <img src="img/dear-a.png" alt="Dear A." loading="lazy">
+        <img src="img/sweet-potato-vine.png" alt="Sweet Potato Vine" loading="lazy">
         <div class="artiste-card-overlay"><span>Découvrir →</span></div>
       </div>
-      <div class="artiste-card-name">Dear A.</div>
+      <div class="artiste-card-name">Sweet Potato Vine</div>
     </div>
 
     <div class="artiste-card" onclick="openModal('modal-doblo')" role="button" tabindex="0" aria-label="Doblo Mountain Boys">
@@ -736,12 +780,12 @@
       <div class="artiste-card-name">Bluegrass Fire</div>
     </div>
 
-    <div class="artiste-card" onclick="openModal('modal-sweet-potato')" role="button" tabindex="0" aria-label="Sweet Potato Vine">
+    <div class="artiste-card" onclick="openModal('modal-dear-a')" role="button" tabindex="0" aria-label="Dear A.">
       <div class="artiste-card-img">
-        <img src="img/sweet-potato-vine.png" alt="Sweet Potato Vine" loading="lazy">
+        <img src="img/dear-a.png" alt="Dear A." loading="lazy">
         <div class="artiste-card-overlay"><span>Découvrir →</span></div>
       </div>
-      <div class="artiste-card-name">Sweet Potato Vine</div>
+      <div class="artiste-card-name">Dear A.</div>
     </div>
 
     <div class="artiste-card" onclick="openModal('modal-rural-singers')" role="button" tabindex="0" aria-label="Rural Singers">
@@ -1404,6 +1448,19 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
 }
 .mc-card:hover .mc-card-photo img { transform: scale(1.05); }
 
+/* Vignette placeholder (en attendant la photo de l'artiste) */
+.mc-card-photo.is-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7E600;
+  line-height: 1;
+}
+.mc-card-photo.is-placeholder span {
+  font-size: 3.4rem;
+  filter: saturate(0.9);
+}
+
 /* Infos texte */
 .mc-card-body {
   padding: 14px 14px 16px;
@@ -1502,7 +1559,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     <!-- Prix + intro -->
     <div class="mc-intro-bar">
       <span class="mc-price-badge">20 € / masterclass</span>
-      <span class="mc-intro-text">Ateliers de 1h30 · animés par les artistes invités</span>
+      <span class="mc-intro-text">Animés par les artistes invités</span>
     </div>
 
     <!-- Grille des 4 masterclasses -->
@@ -1588,13 +1645,35 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
 
       <div class="mc-card">
         <div class="mc-card-photo">
-          <img src="img/mc-virginia-oldtime.jpg" alt="Style & répertoire old-time de Virginie du Sud-Est" loading="lazy">
+          <img src="img/mc-virginia-oldtime.jpg" alt="Style & répertoire old-time de Virginie du Sud-Ouest" loading="lazy">
         </div>
         <div class="mc-card-body">
-          <p class="mc-card-instrument">Style &amp; répertoire old-time — Virginie du Sud-Est</p>
+          <p class="mc-card-instrument">Style &amp; répertoire old-time — Virginie du Sud-Ouest</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Watkins &amp; Small</p>
-          <p class="mc-card-funfact">Atelier d'1h ouvert à tous les instruments de string band.</p>
+          <p class="mc-card-funfact">Atelier d'1h ouvert à tous les instruments de string band — <strong style="color:#F7E600; font-style:normal;">gratuit</strong>.</p>
+        </div>
+      </div>
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-zoe-basha.jpg" alt="Zoe Basha — chant" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Chant</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Zoe Basha</p>
+        </div>
+      </div>
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-lily-sheehann.jpg" alt="Lily Sheehann — guitare bluegrass flatpick" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Guitare bluegrass (flatpick)</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Lily Sheehann</p>
         </div>
       </div>
 
@@ -1656,11 +1735,26 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
 /* Grille jours */
 .prog-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
 }
-@media (max-width: 920px) { .prog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1080px) { .prog-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .prog-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .prog-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; } }
+/* Ligne épilogue sous le planning (jam de clôture) */
+.prog-epilogue {
+  margin: 22px auto 0;
+  max-width: 760px;
+  text-align: center;
+  background: rgba(255,255,255,0.06);
+  border: 2px dashed rgba(247,230,0,0.35);
+  padding: 14px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+}
+.prog-epilogue strong { color: #F7E600; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.06em; font-size: 1.1rem; }
 .prog-day {
   background: #111;
   border: 2px solid rgba(247,230,0,0.2);
@@ -1717,11 +1811,11 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
 
   <div class="prog-inner">
     <div class="prog-header">
-      <p class="fg-section-sub">Quatre jours de musique</p>
+      <p class="fg-section-sub">Cinq jours de musique</p>
       <h2 class="fg-section-title">Programme</h2>
     </div>
     <p class="prog-note">
-      Le programme complet du festival, du jeudi 20 au dimanche 23 août 2026, à la salle des fêtes de Ganac. Horaires donnés à titre indicatif, susceptibles d'ajustements.
+      Le programme complet du festival, du mercredi 19 au dimanche 23 août 2026, à la salle des fêtes de Ganac. Horaires donnés à titre indicatif, susceptibles d'ajustements.
     </p>
 
     <div class="prog-legend">
@@ -1731,6 +1825,19 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     </div>
 
     <div class="prog-grid">
+
+      <!-- MERCREDI -->
+      <div class="prog-day">
+        <div class="prog-day-head">
+          <p class="prog-day-name">Mercredi</p>
+          <p class="prog-day-date">19 Août</p>
+          <span style="display:inline-block; margin-top:6px; background:#E82000; color:#fff; font-family:'Bebas Neue',sans-serif; font-size:0.85rem; letter-spacing:0.1em; padding:2px 12px; border:2px solid #1A1A1A;">🎉 Journée gratuite</span>
+        </div>
+        <div class="prog-slots">
+          <p class="prog-subhead">Festival Off</p>
+          <div class="prog-slot"><span class="prog-time" style="min-width:34px;">🍻</span><span class="prog-event"><span class="ev-name">Festival Off dans les bars de Foix</span><span class="ev-tag t-anim">Off · gratuit</span></span></div>
+        </div>
+      </div>
 
       <!-- JEUDI -->
       <div class="prog-day">
@@ -1772,8 +1879,9 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="prog-day-date">22 Août</p>
         </div>
         <div class="prog-slots">
-          <p class="prog-subhead">Masterclasses · 10h30</p>
+          <p class="prog-subhead">Masterclasses</p>
           <div class="prog-slot"><span class="prog-time">10h30</span><span class="prog-event"><span class="ev-name">Accordéon cajun — Dirk Powell<br>Guitare — Amélia Powell<br>Fiddle old-time — Sammy Lind<br>Contrebasse — Nadine Landry</span><span class="ev-tag t-mc">Masterclasses</span></span></div>
+          <div class="prog-slot"><span class="prog-time">13h30</span><span class="prog-event"><span class="ev-name">Chant — Zoe Basha<br>Guitare bluegrass (flatpick) — Lily Sheehann</span><span class="ev-tag t-mc">Masterclasses</span></span></div>
           <p class="prog-subhead">Concerts</p>
           <div class="prog-slot"><span class="prog-time">12h</span><span class="prog-event"><span class="ev-name">Tin Pot</span><span class="ev-tag t-concert">Concert</span></span></div>
           <div class="prog-slot"><span class="prog-time">14h30</span><span class="prog-event"><span class="ev-name">Doblo Mountain Boys</span><span class="ev-tag t-concert">Concert</span></span></div>
@@ -1788,10 +1896,11 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
         <div class="prog-day-head">
           <p class="prog-day-name">Dimanche</p>
           <p class="prog-day-date">23 Août</p>
+          <span style="display:inline-block; margin-top:6px; background:#E82000; color:#fff; font-family:'Bebas Neue',sans-serif; font-size:0.85rem; letter-spacing:0.1em; padding:2px 12px; border:2px solid #1A1A1A;">🎉 Journée gratuite</span>
         </div>
         <div class="prog-slots">
           <p class="prog-subhead">Masterclass</p>
-          <div class="prog-slot"><span class="prog-time">10h30</span><span class="prog-event"><span class="ev-name">Style &amp; répertoire old-time de Virginie du Sud-Est<br><span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">1h, ouvert à tous les instruments de string band</span></span><span class="ev-tag t-mc">Masterclass</span></span></div>
+          <div class="prog-slot"><span class="prog-time">10h30</span><span class="prog-event"><span class="ev-name">Style &amp; répertoire old-time de Virginie du Sud-Ouest — Watkins &amp; Small<br><span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">1h, ouvert à tous les instruments de string band · gratuit</span></span><span class="ev-tag t-mc">Masterclass</span></span></div>
           <p class="prog-subhead">Animations</p>
           <div class="prog-slot"><span class="prog-time">11h30</span><span class="prog-event"><span class="ev-name">Gospel / Singing session</span><span class="ev-tag t-anim">Animation</span></span></div>
           <div class="prog-slot"><span class="prog-time">13h</span><span class="prog-event"><span class="ev-name">Loto</span><span class="ev-tag t-anim">Animation</span></span></div>
@@ -1801,6 +1910,10 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
       </div>
 
     </div><!-- /prog-grid -->
+
+    <p class="prog-epilogue">
+      🍻 <strong>Lundi 24 août · 19h</strong> — Grosse jam de clôture du festival à la Brasserie de la Fourche.
+    </p>
 
     <div class="prog-cta-wrap">
       <a href="#billetterie" class="fg-btn fg-btn-yellow">🎟 Réserver mes billets</a>
@@ -1850,7 +1963,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
       <div class="info-card">
         <span class="info-card-icon">📅</span>
         <span class="info-card-label">Dates</span>
-        <span class="info-card-value">20 · 21 · 22 · 23<br>Août 2026</span>
+        <span class="info-card-value">19 · 20 · 21 · 22 · 23<br>Août 2026</span>
       </div>
 
       <div class="info-card">
@@ -1961,7 +2074,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
         <div style="width:1px; background:rgba(247,230,0,0.2); flex-shrink:0;"></div>
 
         <div style="text-align:center;">
-          <p style="font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.12em; color:#fff; margin:0 0 4px;">Masterclasses <span style="font-size:0.8rem; color:rgba(255,255,255,0.5);">(1h30)</span></p>
+          <p style="font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.12em; color:#fff; margin:0 0 4px;">Masterclasses</p>
           <p style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#F7E600; line-height:1; margin:0 0 2px;">20 €</p>
           <p style="font-family:'Inter',sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.5); margin:0;">tarif unique</p>
         </div>
