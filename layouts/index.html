@@ -181,7 +181,8 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-.hero-partners-logos a {
+.hero-partners-logos a,
+.hero-partners-logos span {
   display: flex;
   align-items: center;
   transition: transform 0.2s;
@@ -199,10 +200,16 @@
 .hero-partners-logos img.logo-blend {
   mix-blend-mode: multiply;
 }
-/* FBMA : fond rouge rectangulaire — arrondi + ombre légère */
+/* FBMA / Le Noi : fond rectangulaire — arrondi + ombre légère */
 .hero-partners-logos img.logo-badge {
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(26,26,26,0.22);
+}
+/* Passe-Temps & Raws : arrondi marqué autour du visuel + ombre */
+.hero-partners-logos img.logo-rounded {
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(26,26,26,0.28);
+  border: 2px solid rgba(26,26,26,0.12);
 }
 
 /* ═══════════════════════════════════
@@ -626,6 +633,21 @@
       <a href="https://toulousefolksociety.fr/" target="_blank" rel="noopener" title="Toulouse Folk Society">
         <img src="img/logo-tfs.png" alt="Toulouse Folk Society" class="logo-badge">
       </a>
+      <a href="https://foixgrass.festicar.io/" target="_blank" rel="noopener" title="Festicar — Covoiturage du festival">
+        <img src="img/partner-festicar.png" alt="Festicar — covoiturage du festival">
+      </a>
+      <span title="Le Noi">
+        <img src="img/partner-le-noi.jpg" alt="Le Noi" class="logo-badge">
+      </span>
+      <span title="Canon Canon">
+        <img src="img/partner-canon-canon.png" alt="Canon Canon">
+      </span>
+      <span title="Le Passe-Temps">
+        <img src="img/partner-passe-temps.jpg" alt="Le Passe-Temps" class="logo-rounded">
+      </span>
+      <span title="Raws">
+        <img src="img/partner-raws.jpg" alt="Raws" class="logo-rounded">
+      </span>
     </div>
   </div>
 </section>
@@ -698,12 +720,20 @@
       <div class="artiste-card-name">Doblo Mountain Boys</div>
     </div>
 
-    <div class="artiste-card" onclick="openModal('modal-camel-fly')" role="button" tabindex="0" aria-label="Camel Fly">
+    <div class="artiste-card" onclick="openModal('modal-tin-pot')" role="button" tabindex="0" aria-label="Tin Pot">
       <div class="artiste-card-img">
-        <img src="img/camel-fly.png" alt="Camel Fly" loading="lazy">
+        <img src="img/tin-pot.png" alt="Tin Pot" loading="lazy">
         <div class="artiste-card-overlay"><span>Découvrir →</span></div>
       </div>
-      <div class="artiste-card-name">Camel Fly</div>
+      <div class="artiste-card-name">Tin Pot</div>
+    </div>
+
+    <div class="artiste-card" onclick="openModal('modal-bluegrass-fire')" role="button" tabindex="0" aria-label="Bluegrass Fire">
+      <div class="artiste-card-img">
+        <img src="img/bluegrass-fire.png" alt="Bluegrass Fire" loading="lazy">
+        <div class="artiste-card-overlay"><span>Découvrir →</span></div>
+      </div>
+      <div class="artiste-card-name">Bluegrass Fire</div>
     </div>
 
     <div class="artiste-card" onclick="openModal('modal-sweet-potato')" role="button" tabindex="0" aria-label="Sweet Potato Vine">
@@ -998,29 +1028,69 @@
   </div>
 </div>
 
-<!-- ═══ MODAL : Camel Fly ═══ -->
-<div id="modal-camel-fly" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-camel-fly')">
+<!-- ═══ MODAL : Tin Pot ═══ -->
+<div id="modal-tin-pot" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-tin-pot')">
   <div class="modal-inner">
-    <button class="modal-close" onclick="closeModal('modal-camel-fly')" aria-label="Fermer">✕</button>
+    <button class="modal-close" onclick="closeModal('modal-tin-pot')" aria-label="Fermer">✕</button>
     <div class="modal-poster">
-      <img src="img/camel-fly.png" alt="Camel Fly">
+      <img src="img/tin-pot.png" alt="Tin Pot">
     </div>
     <div class="modal-info">
-      <h2 class="modal-name">Camel Fly</h2>
-      <p class="modal-genre">Bluegrass</p>
-      <span class="modal-origin">Tarn, France</span>
+      <h2 class="modal-name">Tin Pot</h2>
+      <p class="modal-genre">Old-Time · Early Bluegrass</p>
+      <span class="modal-origin">France</span>
       <p class="modal-bio">
-        Camel Fly est le tout nouveau projet des virtuoses Damien Mélich (guitare) et Fred Simon (banjo). Ils proposent un bluegrass moderne inspiré fortement de Béla Fleck et mêlé d'influences jazz. Basés dans le Tarn, ils seront en duo sur le festival.
+        Tin Pot est un duo guitare, fiddle, mandoline, banjo de old-time et early bluegrass, composé de Léo Divary (Pig Society, Karambolage) et Paul Rozière (FUM, Toux Grass Unit). Fiddle tunes et chansons avec harmonies vocales !
       </p>
       <p class="modal-videos-label">Écoutez-les</p>
       <div class="modal-videos-stack">
         <div class="modal-video-item">
           <div class="modal-video-responsive">
-            <iframe src="https://www.youtube.com/embed/olCF3jzNgGE" title="Camel Fly" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/7sX_Tf2LBUw" title="Tin Pot" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="modal-video-footer">
-            <span class="modal-video-title">Camel Fly</span>
-            <span class="modal-video-tag">Camel Fly</span>
+            <span class="modal-video-title">Tin Pot</span>
+            <span class="modal-video-tag">Tin Pot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL : Bluegrass Fire ═══ -->
+<div id="modal-bluegrass-fire" class="artiste-modal" onclick="if(event.target===this)closeModal('modal-bluegrass-fire')">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeModal('modal-bluegrass-fire')" aria-label="Fermer">✕</button>
+    <div class="modal-poster">
+      <img src="img/bluegrass-fire.png" alt="Bluegrass Fire">
+    </div>
+    <div class="modal-info">
+      <h2 class="modal-name">Bluegrass Fire</h2>
+      <p class="modal-genre">Bluegrass · Fiddle Tunes</p>
+      <span class="modal-origin">Sud-Ouest, France</span>
+      <p class="modal-bio">
+        Bluegrass Fire est un duo formé de Guillaume Blanc &amp; Damien Mélich. Damien est un guitariste bluegrass de la scène du sud-ouest français, membre notamment de Lazy Grass, <a href="https://www.instagram.com/jurassicgrass.band" target="_blank" rel="noopener" style="color:#F7E600;">Jurassic Grass Band</a> et Two Dollar Bill - Bluegrass. Guillaume Blanc est un violoniste virtuose aveyronnais récemment converti au bluegrass. Les deux ensemble font des étincelles avec ce tout nouveau duo.<br><br>
+        Avec la sortie récente de l'album « French Bluegrass Vol. 1 », des fiddle tunes de bluegrass composés par Damien Mélich, le set sera ponctué de guests et vous pourrez entendre ces fameux fiddle tunes du sud-ouest !
+      </p>
+      <p class="modal-videos-label">Écoutez-les</p>
+      <div class="modal-videos-stack">
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/3zV6TZA0vJk" title="Bluegrass Fire" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">French Bluegrass Vol. 1</span>
+            <span class="modal-video-tag">Bluegrass Fire</span>
+          </div>
+        </div>
+        <div class="modal-video-item">
+          <div class="modal-video-responsive">
+            <iframe src="https://www.youtube.com/embed/J64MVtLs7yg" title="Bluegrass Fire" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="modal-video-footer">
+            <span class="modal-video-title">Bluegrass Fire</span>
+            <span class="modal-video-tag">Bluegrass Fire</span>
           </div>
         </div>
       </div>
@@ -1483,13 +1553,58 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
         </div>
       </div>
 
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-andrew-small-mandoline.webp" alt="Andrew Small — mandoline" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Mandoline</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Andrew Small</p>
+        </div>
+      </div>
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-ashlee-banjo.jpg" alt="Ashlee Watkins — banjo old-time" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Banjo Old-Time</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Ashlee Watkins</p>
+        </div>
+      </div>
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-harmonies-watkins-small.jpg" alt="Harmonies vocales en duo — Watkins & Small" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Harmonies vocales en duo</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Watkins &amp; Small</p>
+        </div>
+      </div>
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-virginia-oldtime.jpg" alt="Style & répertoire old-time de Virginie du Sud-Est" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Style &amp; répertoire old-time — Virginie du Sud-Est</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Watkins &amp; Small</p>
+          <p class="mc-card-funfact">Atelier d'1h ouvert à tous les instruments de string band.</p>
+        </div>
+      </div>
+
     </div><!-- /mc-grid -->
 
     <!-- À venir -->
     <div class="mc-coming">
-      <p class="mc-coming-title">🎸 D'autres masterclasses à venir</p>
-      <p>Planning complet et billetterie ouvrent bientôt.</p>
-      <p>Restez connectés pour ne rien manquer !</p>
+      <p class="mc-coming-title">🗓 Retrouvez les horaires dans le programme</p>
+      <p>Toutes les masterclasses sont désormais planifiées — consultez le <a href="#programme" style="color:#1A1A1A; text-decoration:underline;">programme complet</a>.</p>
+      <p>Billetterie des masterclasses ouverte très bientôt.</p>
     </div>
 
   </div><!-- /mc-body -->
@@ -1497,6 +1612,200 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
   <!-- Bandeau décoratif bas -->
   <div class="mc-deco-bottom"></div>
 
+</section>
+
+<!-- ═══════════════════════════
+     PROGRAMME
+═══════════════════════════ -->
+<section id="programme" style="scroll-margin-top: 64px;">
+<style>
+#programme {
+  background: #1A1A1A;
+  color: #fff;
+  padding: 70px 24px 80px;
+  border-bottom: 4px solid #F7E600;
+}
+.prog-inner { max-width: 1180px; margin: 0 auto; }
+.prog-header { text-align: center; margin-bottom: 14px; }
+.prog-header .fg-section-title { color: #F7E600; }
+.prog-header .fg-section-sub { color: rgba(247,230,0,0.6); }
+.prog-note {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.5);
+  max-width: 640px;
+  margin: 0 auto 44px;
+  line-height: 1.6;
+}
+/* Légende */
+.prog-legend {
+  display: flex; justify-content: center; gap: 22px; flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.prog-legend span {
+  font-family: 'Inter', sans-serif; font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+  display: flex; align-items: center; gap: 8px;
+}
+.prog-legend i { width: 14px; height: 14px; display: inline-block; border: 2px solid #1A1A1A; }
+.prog-legend .lg-concert { background: #E82000; }
+.prog-legend .lg-mc { background: #F7E600; }
+.prog-legend .lg-anim { background: #1E3FA8; }
+/* Grille jours */
+.prog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 920px) { .prog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .prog-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; } }
+.prog-day {
+  background: #111;
+  border: 2px solid rgba(247,230,0,0.2);
+  display: flex; flex-direction: column;
+}
+.prog-day-head {
+  background: #F7E600;
+  color: #1A1A1A;
+  text-align: center;
+  padding: 12px 8px;
+  border-bottom: 3px solid #1A1A1A;
+}
+.prog-day-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem; letter-spacing: 0.1em; line-height: 1; margin: 0;
+}
+.prog-day-date {
+  font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; margin: 3px 0 0;
+}
+.prog-slots { padding: 8px 10px 14px; display: flex; flex-direction: column; }
+.prog-slot {
+  display: flex; gap: 10px; align-items: baseline;
+  padding: 10px 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.prog-slot:last-child { border-bottom: none; }
+.prog-time {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem; letter-spacing: 0.05em;
+  color: #F7E600; flex-shrink: 0; min-width: 46px;
+}
+.prog-event { font-family: 'Inter', sans-serif; line-height: 1.35; }
+.prog-event .ev-name {
+  font-size: 0.92rem; font-weight: 700; color: #fff; display: block;
+}
+.prog-event .ev-tag {
+  font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; display: inline-block;
+  margin-top: 3px; padding: 1px 7px; line-height: 1.5;
+}
+.ev-tag.t-concert { background: #E82000; color: #fff; }
+.ev-tag.t-mc { background: #F7E600; color: #1A1A1A; }
+.ev-tag.t-anim { background: #1E3FA8; color: #fff; }
+.prog-subhead {
+  font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,230,0,0.55);
+  margin: 8px 4px 2px; padding-top: 8px;
+  border-top: 1px dashed rgba(247,230,0,0.2);
+}
+.prog-slots .prog-subhead:first-child { border-top: none; padding-top: 0; }
+.prog-cta-wrap { text-align: center; margin-top: 44px; }
+</style>
+
+  <div class="prog-inner">
+    <div class="prog-header">
+      <p class="fg-section-sub">Quatre jours de musique</p>
+      <h2 class="fg-section-title">Programme</h2>
+    </div>
+    <p class="prog-note">
+      Le programme complet du festival, du jeudi 20 au dimanche 23 août 2026, à la salle des fêtes de Ganac. Horaires donnés à titre indicatif, susceptibles d'ajustements.
+    </p>
+
+    <div class="prog-legend">
+      <span><i class="lg-concert"></i> Concerts</span>
+      <span><i class="lg-mc"></i> Masterclasses</span>
+      <span><i class="lg-anim"></i> Animations</span>
+    </div>
+
+    <div class="prog-grid">
+
+      <!-- JEUDI -->
+      <div class="prog-day">
+        <div class="prog-day-head">
+          <p class="prog-day-name">Jeudi</p>
+          <p class="prog-day-date">20 Août</p>
+        </div>
+        <div class="prog-slots">
+          <p class="prog-subhead">Concerts</p>
+          <div class="prog-slot"><span class="prog-time">16h</span><span class="prog-event"><span class="ev-name">Rural Singers</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">18h30</span><span class="prog-event"><span class="ev-name">Sweet Potato Vine</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">21h</span><span class="prog-event"><span class="ev-name">Ashlee Watkins &amp; Andrew Small</span><span class="ev-tag t-concert">Concert</span></span></div>
+        </div>
+      </div>
+
+      <!-- VENDREDI -->
+      <div class="prog-day">
+        <div class="prog-day-head">
+          <p class="prog-day-name">Vendredi</p>
+          <p class="prog-day-date">21 Août</p>
+        </div>
+        <div class="prog-slots">
+          <p class="prog-subhead">Masterclasses</p>
+          <div class="prog-slot"><span class="prog-time">10h30</span><span class="prog-event"><span class="ev-name">Mandoline — Andrew Small<br>Banjo old-time — Ashlee Watkins</span><span class="ev-tag t-mc">Masterclass</span></span></div>
+          <div class="prog-slot"><span class="prog-time">13h30</span><span class="prog-event"><span class="ev-name">Harmonies vocales en duo — Watkins &amp; Small</span><span class="ev-tag t-mc">Masterclass</span></span></div>
+          <p class="prog-subhead">Concerts</p>
+          <div class="prog-slot"><span class="prog-time">12h</span><span class="prog-event"><span class="ev-name">Bluegrass Fire</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">14h30</span><span class="prog-event"><span class="ev-name">Stella Might Come</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">17h</span><span class="prog-event"><span class="ev-name">Dear A.</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">19h</span><span class="prog-event"><span class="ev-name">La Famille Ginger</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">21h30</span><span class="prog-event"><span class="ev-name">Dirk &amp; Amélia Powell · Nadine Landry &amp; Sammy Lind</span><span class="ev-tag t-concert">Concert</span></span></div>
+        </div>
+      </div>
+
+      <!-- SAMEDI -->
+      <div class="prog-day">
+        <div class="prog-day-head">
+          <p class="prog-day-name">Samedi</p>
+          <p class="prog-day-date">22 Août</p>
+        </div>
+        <div class="prog-slots">
+          <p class="prog-subhead">Masterclasses · 10h30</p>
+          <div class="prog-slot"><span class="prog-time">10h30</span><span class="prog-event"><span class="ev-name">Accordéon cajun — Dirk Powell<br>Guitare — Amélia Powell<br>Fiddle old-time — Sammy Lind<br>Contrebasse — Nadine Landry</span><span class="ev-tag t-mc">Masterclasses</span></span></div>
+          <p class="prog-subhead">Concerts</p>
+          <div class="prog-slot"><span class="prog-time">12h</span><span class="prog-event"><span class="ev-name">Tin Pot</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">14h30</span><span class="prog-event"><span class="ev-name">Doblo Mountain Boys</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">17h</span><span class="prog-event"><span class="ev-name">Baked Beans</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">19h</span><span class="prog-event"><span class="ev-name">Dublin Country Club</span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">21h</span><span class="prog-event"><span class="ev-name">Bal Old-Time puis Bal Cajun</span><span class="ev-tag t-anim">Bal</span></span></div>
+        </div>
+      </div>
+
+      <!-- DIMANCHE -->
+      <div class="prog-day">
+        <div class="prog-day-head">
+          <p class="prog-day-name">Dimanche</p>
+          <p class="prog-day-date">23 Août</p>
+        </div>
+        <div class="prog-slots">
+          <p class="prog-subhead">Masterclass</p>
+          <div class="prog-slot"><span class="prog-time">10h30</span><span class="prog-event"><span class="ev-name">Style &amp; répertoire old-time de Virginie du Sud-Est<br><span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">1h, ouvert à tous les instruments de string band</span></span><span class="ev-tag t-mc">Masterclass</span></span></div>
+          <p class="prog-subhead">Animations</p>
+          <div class="prog-slot"><span class="prog-time">11h30</span><span class="prog-event"><span class="ev-name">Gospel / Singing session</span><span class="ev-tag t-anim">Animation</span></span></div>
+          <div class="prog-slot"><span class="prog-time">13h</span><span class="prog-event"><span class="ev-name">Loto</span><span class="ev-tag t-anim">Animation</span></span></div>
+          <div class="prog-slot"><span class="prog-time">15h</span><span class="prog-event"><span class="ev-name">Scène ouverte</span><span class="ev-tag t-anim">Animation</span></span></div>
+          <div class="prog-slot"><span class="prog-time">17h</span><span class="prog-event"><span class="ev-name">Bluegrass Club de Toulouse</span><span class="ev-tag t-concert">Concert</span></span></div>
+        </div>
+      </div>
+
+    </div><!-- /prog-grid -->
+
+    <div class="prog-cta-wrap">
+      <a href="#billetterie" class="fg-btn fg-btn-yellow">🎟 Réserver mes billets</a>
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════
@@ -1572,6 +1881,15 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
         <span class="info-card-icon">📰</span>
         <span class="info-card-label">Contact Presse</span>
         <span class="info-card-value"><a href="mailto:communication.foixgrass@ik.me" style="color:#F7E600; word-break:break-all;">communication.foixgrass@ik.me</a></span>
+      </div>
+
+      <div class="info-card">
+        <span class="info-card-icon">🚙</span>
+        <span class="info-card-label">Covoiturage</span>
+        <span class="info-card-value">
+          <a href="https://foixgrass.festicar.io/" target="_blank" rel="noopener" style="color:#F7E600;">Site de covoiturage gratuit</a><br>
+          <span style="font-size:0.82rem; font-weight:400;">Publiez et demandez des trajets pour le festival. Pensez aussi à proposer le trajet gare de Foix → festival !</span>
+        </span>
       </div>
 
     </div><!-- /infos-grid -->
