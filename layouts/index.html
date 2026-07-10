@@ -1506,6 +1506,20 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
 }
 .mc-card-funfact::before { content: '★  '; color: #F7E600; font-style: normal; }
 
+/* Horaire de la masterclass */
+.mc-card-when {
+  align-self: flex-start;
+  margin-top: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  color: #1A1A1A;
+  background: #F7E600;
+  padding: 3px 10px;
+  line-height: 1.15;
+}
+.mc-card-when::before { content: '🗓 '; }
+
 /* ── Bandeau déco bas (instrument.jpg) ── */
 .mc-deco-bottom {
   position: relative;
@@ -1573,6 +1587,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Accordéon Cajun</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Dirk Powell</p>
+          <span class="mc-card-when">Samedi · 10h30</span>
         </div>
       </div>
 
@@ -1584,6 +1599,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Guitare Old-Time &amp; Cajun</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Amélia Powell</p>
+          <span class="mc-card-when">Samedi · 10h30</span>
         </div>
       </div>
 
@@ -1595,6 +1611,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Fiddle Old-Time</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Sammy Lind</p>
+          <span class="mc-card-when">Samedi · 10h30</span>
         </div>
       </div>
 
@@ -1606,6 +1623,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Contrebasse</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Nadine Landry</p>
+          <span class="mc-card-when">Samedi · 10h30</span>
           <p class="mc-card-funfact">C'est elle qui a donné son nom au fameux micro « Nadine » de Ear Trumpet Labs.</p>
         </div>
       </div>
@@ -1618,6 +1636,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Mandoline</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Andrew Small</p>
+          <span class="mc-card-when">Vendredi · 10h30</span>
         </div>
       </div>
 
@@ -1629,6 +1648,19 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Banjo Old-Time</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Ashlee Watkins</p>
+          <span class="mc-card-when">Vendredi · 10h30</span>
+        </div>
+      </div>
+
+      <div class="mc-card">
+        <div class="mc-card-photo">
+          <img src="img/mc-rens-buijtels.jpg" alt="Rens Buijtels — banjo bluegrass" loading="lazy">
+        </div>
+        <div class="mc-card-body">
+          <p class="mc-card-instrument">Banjo Bluegrass</p>
+          <p class="mc-card-with">avec</p>
+          <p class="mc-card-artist">Rens Buijtels</p>
+          <span class="mc-card-when">Samedi · 10h30</span>
         </div>
       </div>
 
@@ -1640,6 +1672,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Harmonies vocales en duo</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Watkins &amp; Small</p>
+          <span class="mc-card-when">Vendredi · 13h30</span>
         </div>
       </div>
 
@@ -1651,6 +1684,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Style &amp; répertoire old-time — Virginie du Sud-Ouest</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Watkins &amp; Small</p>
+          <span class="mc-card-when">Dimanche · 10h30</span>
           <p class="mc-card-funfact">Atelier d'1h ouvert à tous les instruments de string band — <strong style="color:#F7E600; font-style:normal;">gratuit</strong>.</p>
         </div>
       </div>
@@ -1663,6 +1697,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Chant</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Zoe Basha</p>
+          <span class="mc-card-when">Samedi · 13h30</span>
         </div>
       </div>
 
@@ -1674,16 +1709,17 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <p class="mc-card-instrument">Guitare bluegrass (flatpick)</p>
           <p class="mc-card-with">avec</p>
           <p class="mc-card-artist">Lily Sheehann</p>
+          <span class="mc-card-when">Samedi · 13h30</span>
         </div>
       </div>
 
     </div><!-- /mc-grid -->
 
-    <!-- À venir -->
+    <!-- Renvoi billetterie -->
     <div class="mc-coming">
-      <p class="mc-coming-title">🗓 Retrouvez les horaires dans le programme</p>
-      <p>Toutes les masterclasses sont désormais planifiées — consultez le <a href="#programme" style="color:#1A1A1A; text-decoration:underline;">programme complet</a>.</p>
-      <p>Billetterie des masterclasses ouverte très bientôt.</p>
+      <p class="mc-coming-title">🎟 Réservez votre masterclass</p>
+      <p>20 € par masterclass · places limitées. Réservation en ligne, paiement sécurisé via HelloAsso.</p>
+      <a href="#billetterie-masterclasses" class="fg-btn fg-btn-primary" style="margin-top:16px;">🎟 Réserver une masterclass</a>
     </div>
 
   </div><!-- /mc-body -->
@@ -1834,8 +1870,11 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
           <span style="display:inline-block; margin-top:6px; background:#E82000; color:#fff; font-family:'Bebas Neue',sans-serif; font-size:0.85rem; letter-spacing:0.1em; padding:2px 12px; border:2px solid #1A1A1A;">🎉 Journée gratuite</span>
         </div>
         <div class="prog-slots">
-          <p class="prog-subhead">Festival Off</p>
-          <div class="prog-slot"><span class="prog-time" style="min-width:34px;">🍻</span><span class="prog-event"><span class="ev-name">Festival Off dans les bars de Foix</span><span class="ev-tag t-anim">Off · gratuit</span></span></div>
+          <p class="prog-subhead">Festival Off · dans les bars de Foix</p>
+          <div class="prog-slot"><span class="prog-time">14h</span><span class="prog-event"><span class="ev-name">Toux Grass Unit &amp; Guests <span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">(Ariège)</span><br><span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">Canon Canon · cave à vin</span></span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">16h</span><span class="prog-event"><span class="ev-name">The Left Hands <span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">(Rennes)</span><br><span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">le Passe-Temps &amp; le Noï · cafés-restaurants</span></span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">19h</span><span class="prog-event"><span class="ev-name">The Jake Braunecker Band <span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">(Toulouse / USA)</span><br><span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">Brasserie de la Fourche · bar</span></span><span class="ev-tag t-concert">Concert</span></span></div>
+          <div class="prog-slot"><span class="prog-time">21h</span><span class="prog-event"><span class="ev-name">Ashlee Watkins &amp; Andrew Small <span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">(Virginie, USA)</span><br><span style="font-weight:400; color:rgba(255,255,255,0.55); font-size:0.8rem;">Brasserie de la Fourche · bar</span></span><span class="ev-tag t-concert">Concert</span></span></div>
         </div>
       </div>
 
@@ -1880,7 +1919,7 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
         </div>
         <div class="prog-slots">
           <p class="prog-subhead">Masterclasses</p>
-          <div class="prog-slot"><span class="prog-time">10h30</span><span class="prog-event"><span class="ev-name">Accordéon cajun — Dirk Powell<br>Guitare — Amélia Powell<br>Fiddle old-time — Sammy Lind<br>Contrebasse — Nadine Landry</span><span class="ev-tag t-mc">Masterclasses</span></span></div>
+          <div class="prog-slot"><span class="prog-time">10h30</span><span class="prog-event"><span class="ev-name">Accordéon cajun — Dirk Powell<br>Guitare — Amélia Powell<br>Fiddle old-time — Sammy Lind<br>Contrebasse — Nadine Landry<br>Banjo bluegrass — Rens Buijtels</span><span class="ev-tag t-mc">Masterclasses</span></span></div>
           <div class="prog-slot"><span class="prog-time">13h30</span><span class="prog-event"><span class="ev-name">Chant — Zoe Basha<br>Guitare bluegrass (flatpick) — Lily Sheehann</span><span class="ev-tag t-mc">Masterclasses</span></span></div>
           <p class="prog-subhead">Concerts</p>
           <div class="prog-slot"><span class="prog-time">12h</span><span class="prog-event"><span class="ev-name">Tin Pot</span><span class="ev-tag t-concert">Concert</span></span></div>
@@ -2059,9 +2098,9 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     <p class="fg-section-sub">Réserver sa place</p>
     <h2 class="fg-section-title">Billetterie</h2>
 
-    <!-- À venir : Pass 1 Jour & Masterclasses -->
+    <!-- Tarifs : Pass 1 Jour & Masterclasses -->
     <div style="margin: 0 auto 36px; max-width: 640px; border: 2px dashed rgba(247,230,0,0.4); padding: 28px 32px; background: rgba(0,0,0,0.2);">
-      <p style="font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.2em; color:rgba(247,230,0,0.6); text-transform:uppercase; margin:0 0 18px;">Bientôt en vente — dès la publication du programme</p>
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.2em; color:rgba(247,230,0,0.6); text-transform:uppercase; margin:0 0 18px;">Nos tarifs</p>
 
       <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-bottom:18px;">
 
@@ -2086,6 +2125,13 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
       </p>
     </div>
 
+    <!-- Accès rapide aux deux billetteries -->
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin:0 auto 44px;">
+      <a href="#billetterie-festival" class="fg-btn fg-btn-yellow" style="font-size:1.15rem; padding:14px 30px; line-height:1.25;">🎟 Entrée Festival<br><span style="font-size:0.7rem; letter-spacing:0.08em;">Pass 3 jours &amp; Pass 1 jour</span></a>
+      <a href="#billetterie-masterclasses" class="fg-btn fg-btn-yellow" style="font-size:1.15rem; padding:14px 30px; line-height:1.25;">🎓 Masterclasses<br><span style="font-size:0.7rem; letter-spacing:0.08em;">Ateliers avec les artistes</span></a>
+    </div>
+
+    <h3 id="billetterie-festival" style="scroll-margin-top: 64px; font-family:'Bebas Neue',sans-serif; font-size:1.7rem; letter-spacing:0.1em; color:#F7E600; margin:0 0 16px;">🎟 Pass Festival &amp; Pass 1 Jour</h3>
     <div style="max-width: 700px; margin: 0 auto 24px; border: 3px solid #1A1A1A;">
       <iframe
         id="haWidget"
@@ -2115,6 +2161,33 @@ document.querySelectorAll('.artiste-card').forEach(function(c) {
     <p style="margin-top: 16px; font-size: 0.88rem; color: rgba(255,255,255,0.6);">
       Paiement sécurisé via HelloAsso
     </p>
+
+    <!-- Séparateur -->
+    <div style="height:2px; background:rgba(247,230,0,0.25); max-width:520px; margin:56px auto 40px;"></div>
+
+    <!-- Billetterie Masterclasses -->
+    <div id="billetterie-masterclasses" style="scroll-margin-top: 64px;">
+      <h3 style="font-family:'Bebas Neue',sans-serif; font-size:1.7rem; letter-spacing:0.1em; color:#F7E600; margin:0 0 8px;">🎓 Masterclasses</h3>
+      <p style="font-family:'Inter',sans-serif; font-size:0.9rem; color:rgba(255,255,255,0.7); max-width:560px; margin:0 auto 20px; line-height:1.6;">
+        20 € par masterclass · places limitées. Réservez votre atelier avec les artistes invités (vendredi, samedi &amp; dimanche).
+      </p>
+      <div style="max-width: 700px; margin: 0 auto 24px; border: 3px solid #1A1A1A;">
+        <iframe
+          id="haWidgetMc"
+          allowtransparency="true"
+          allow="payment"
+          scrolling="auto"
+          src="https://www.helloasso.com/associations/foixgrass/evenements/masterclasses-foixgrass/widget"
+          style="width: 100%; height: 750px; min-height: 600px; border: none; display: block;">
+        </iframe>
+      </div>
+      <a href="https://www.helloasso.com/associations/foixgrass/evenements/masterclasses-foixgrass" target="_blank" rel="noopener" class="fg-btn fg-btn-secondary" style="font-size:1.2rem; padding: 14px 36px;">
+        🎓 Ouvrir la billetterie masterclasses
+      </a>
+      <p style="margin-top: 16px; font-size: 0.88rem; color: rgba(255,255,255,0.6);">
+        Paiement sécurisé via HelloAsso
+      </p>
+    </div>
   </div>
 </section>
 
